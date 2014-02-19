@@ -25,7 +25,20 @@
      
      <!--start monster-->
      <div id="monster">
-       <div id="femalemonster"><img src="images/FemaleMonster/female_b_body.png" /></div>
+       <div id="femalemonster">
+       <!--female body parts -->
+       <img src="images/FemaleMonster/female_b_body.png" id="blue-body" class="hide skin"/>
+       <img src="images/FemaleMonster/female_bg_body.png" id="blue-green-body" class="hide skin"/>
+       <img src="images/FemaleMonster/female_g_body.png" id="green-body" class="hide skin"/>
+       <!--end female body-->
+       
+       <!--female tail-->
+       <img src="images/FemaleMonster/female_p_curled_tail.png" id="p_curled_tail" class="hide tail"/>
+       <img src="images/FemaleMonster/female_p_straight_tail.png" id="p_straight_tail" class="hide tail "/>
+       <img src="images/FemaleMonster/female_o_straight_tail.png" id="o_straight_tail" class="hide tail"/>
+       <!--end female tail-->
+       
+       </div>
        <div id="malemonster"><img src="images/MaleMonster/male_b_body.png" /></div>
        <!-- <div id="femalemonster"><img src="MonsterExportedImages/MaleMonster/male_b_body.png" /></div> -->
        <!-- <div id="malemonster"><img src="MonsterExportedImages/FemaleMonster/female_b_body.png" /></div> -->
@@ -34,15 +47,15 @@
      <!--start slider container-->
      <div id="right">
      	<div id="floating"> <!--floating div-->
-     	<!--div one-->
-        <div id="one">
-     		<div class="label1">EE | Ee | Ee</div>
+     	<!--div one--><!-- This is the female sliders-->
+        <div id="one"><!--skin color-->
+     		<div class="label">BB | GB | GG</div>
      		<div id="slider" class="slider_look slider_style"></div>
         </div>
         <!-- end one--> 
         
-         <div id="two">
-     		<div class="label">EE | Ee | Ee</div>
+         <div id="two"><!--tail-->
+     		<div class="label">CC | Cc | cc</div>
      		<div id="slider2" class="slider_look slider_style"></div>
         </div>
         
@@ -64,6 +77,7 @@
         <div id="six">
      		<div class="label">EE | Ee | Ee</div>
      		<div id="slider3" class="slider_look slider_style"></div>
+            <!--female sliders-->
         </div>
         
         </div><!--end floating div-->
