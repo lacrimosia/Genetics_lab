@@ -146,12 +146,16 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 .tail {
     z-index:0;
 }
+
 .monsterbody {
     z-index:1;
 }
+
+
 .horn {
     z-index:2;
 }
+
 .toes {
     z-index:3;
 }
