@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.ui-dialog .ui-dialog-titlebar {
+	padding: .4em 1em;
+	position: relative;
+        display: none;
+}
+
+/*.texts{
+	margin-left:-3000px; display:none; color:#000000;
+}*/
+
+.ui-widget-overlay
+{
+    background-color: #000000;
+	opacity: 0.8;
+}
+
+.ui-dialog,.ui-dialog,.ui-widget, /*.ui-widget-content,*/ .ui-corner-all, .foo, /*.ui-draggable, */.ui-resizable {background:#f26b0f; !important}
+
+/*#helpMessage{
+	color: #f26b0f;
+	background-color:#141b56;
+}*/
+#closewelcome{
+	border: none;
+	color:#002991;
+	text-decoration:none;
+	outline:0;
+}
+
+#closewelcome:hover {
+background:#002991;
+color: #5EBFFF;
+text-decoration:none;
+border:none;
+outline:0;
+}

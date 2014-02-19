@@ -1,0 +1,12 @@
+layout ideas for genetics lab
+
+1. slider (Slide for each type of genotype)
+
+2. Rolling dropdown menu (to choose each type)
+http://labs.abeautifulsite.net/jquery-dropdown/#1
+
+3. drag and drop the genotypes into a bucket and then the female will appear
+
+
+4. Swipe through and select geneotypes
+http://natrixnatrix89.github.io/promptu-menu/

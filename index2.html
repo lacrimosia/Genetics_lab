@@ -1,0 +1,226 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>Dr. Frankensteins's Genetics Lab</title>
+    <!--stylesheets-->
+    <link rel="stylesheet" href="./css/jquE090.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/smoothness.css">
+    <link rel="stylesheet" href="./css/dialog.css">
+    <link rel="stylesheet" href="./css/slider.css">
+	<link rel="stylesheet" href="./css/waypoint.css">
+    
+    <!--scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.shuffle.min.js"></script>-->
+    <!--<script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript" src="js/documentready.js"></script>-->
+	<script type="text/javascript" src="js/waypoint.js"></script>
+  </head>
+  <body>
+    <div id="container">
+    <!--header-->
+     <span>Dr. Frankensteins Genetics Lab</span>
+     <!--end header-->
+     
+     <!--start monster-->
+     <div id="monster">
+	 
+<pre id="example-target" style="font-size: 14px; line-height:1.75; color:rgb(0, 0, 0);">
+<code>
+$('.dial li').waypoint( function(direction) {
+  var $active = $(this);
+  var property, value;
+
+  /* The waypoint is triggered at the top of each list item representing a dial section. When triggering in the down direction we want to use the dial section the waypoint is attached to. But in the up direction we want to use the previous dial section. */
+  if (direction === "up") {
+    $active = $active.prev();
+  }
+
+  /* If we triggered in the up direction and the result from 'prev' came back with an empty set of elements, it means we were on the first element in the list, and we should just use the original element. */
+  if (!$active.length) {
+    $active = $(this);
+  }
+
+  /* The property the dial controls is a data attribute on the ul. */
+  property = $active.closest('.dial').data('property');
+
+  /* The value for that property is a data attribute on each li. */
+  value = $active.data('value');
+	
+  $('#example-target').css(property, value);
+}, {
+  context: 'ul' // Make the scroll context the nearest ul.
+});
+</code>
+</pre>
+	 
+     </div><!--end monster-->
+     
+<!--start slider container-->
+<div id="right">
+<div class="inner">
+<div class="dials">
+<div data-property="font-size" class="dial first">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="8px">8px</li>
+<li data-value="9px">9px</li>
+<li data-value="10px">10px</li>
+<li data-value="11px">11px</li>
+<li data-value="12px">12px</li>
+<li data-value="13px">13px</li>
+<li data-value="14px">14px</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<div data-property="line-height" class="dial">
+<h3>Line Height:</h3>
+<ul>
+<li data-value=".75">.75</li>
+<li data-value="1.0">1.0</li>
+<li data-value="1.25">1.25</li>
+<li data-value="1.5">1.5</li>
+<li data-value="1.75">1.75</li>
+<li data-value="2.0">2.0</li>
+<li data-value="2.25">2.25</li>
+<li data-value="2.5">2.5</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<div data-property="color" class="dial text-color-dial">
+<h3>Text Color:</h3>
+<ul>
+<li data-value="#000">#000</li>
+<li data-value="#222">#222</li>
+<li data-value="#444">#444</li>
+<li data-value="#666">#666</li>
+<li data-value="#888">#888</li>
+<li data-value="#aaa">#aaa</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<!-- Start Genotype Example -->
+<br>
+<div data-property="type-one" class="dial first">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="EE">EE</li>
+<li data-value="Ee">Ee</li>
+<li data-value="ee">ee</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<div data-property="type-two" class="dial">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="PP">PP</li>
+<li data-value="Pp">Pp</li>
+<li data-value="pp">pp</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<div data-property="type-three" class="dial text-color-dial">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="RR">RR</li>
+<li data-value="Rr">Rr</li>
+<li data-value="rr">rr</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<br>
+<div data-property="type-one" class="dial first">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="EE">EE</li>
+<li data-value="Ee">Ee</li>
+<li data-value="ee">ee</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<div data-property="type-two" class="dial">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="PP">PP</li>
+<li data-value="Pp">Pp</li>
+<li data-value="pp">pp</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<div data-property="type-three" class="dial text-color-dial">
+<h3>Font Size:</h3>
+<ul>
+<li data-value="RR">RR</li>
+<li data-value="Rr">Rr</li>
+<li data-value="rr">rr</li>
+</ul>
+<div class="indicator"></div>
+</div>
+<!-- End Genotype Example -->
+</div>
+</div>
+</div>
+    
+<!--end sliders container-->
+     
+     <!--footer container with buttons-->
+     <div id="bottom_footer">
+	 <a href="index.html">Index 1</a>
+     </div><!--end footer container-->
+     
+      <!--help menu-->
+      <div id="helpMessage" class="texts">
+	   <p style="text-align:center;"><b>Dr. Frankensteins Genetics Lab</b></p>
+	  <div style="overflow:auto; height:75px; width:auto; margin-bottom:15px;">
+      <p style="text-align:left;">In this exercise, you will create a Female monster for the male. </div>
+	<p style="text-align:center;"><a href="#" id="closewelcome" class="closing" title="Close Screen">CLICK HERE TO CLOSE</a></p>
+      </div><!-- end help menu-->
+     
+ </div> <!--end container-->
+ 
+ 
+ 
+ <script type="text/javascript">
+$(function() {
+	$('.dial li').waypoint(function(direction) {
+		var $active = $(this);
+		var property, value;
+
+		/* The waypoint is triggered at the top of each list item representing
+		   a dial section. When triggering in the down direction we want to use
+		   the dial section the waypoint is attached to. But in the up direction
+		   we want to use the previous dial section. */
+		if (direction === "up") {
+			$active = $active.prev();
+		}
+
+		/* If we triggered in the up direction and the result from 'prev' came
+		   back with an empty set of elements, it means we were on the first
+		   element in the list, and we should just use the original element. */
+		if (!$active.length) {
+			$active = $(this);
+		}
+
+		/* The property the dial controls is a data attribute on the ul. */
+		property = $active.closest('.dial').data('property');
+
+		/* The value for that property is a data attribute on each li. */
+		value = $active.data('value');
+		
+		$('#example-target').css(property, value);
+	}, {
+		context: 'ul' // Make the scroll context the nearest ul.
+	});
+
+	$('.dial ul').animate({ scrollTop: 145}, 750, 'swing');
+});
+</script>
+
+ 
+</body>
+</html>
+
+

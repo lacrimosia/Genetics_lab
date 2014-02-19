@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #141b56;
+	max-width: 1000px;
+	max-height: 700px;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	padding: .4em 1em;
+	position: relative;
+        display: none;
+}
+
+.texts{
+	margin-left:-3000px; display:none; color:#000000;
+}
+
+.ui-widget-overlay
+{
+    background-color: #000000;
+	opacity: 0.8;
+}
+
+.ui-dialog,.ui-dialog,.ui-widget, /*.ui-widget-content,*/ .ui-corner-all, .foo, /*.ui-draggable, */.ui-resizable {background:#f26b0f; !important}
+
+/*#helpMessage{
+	color: #f26b0f;
+	background-color:#141b56;
+}*/
+#closewelcome{
+	border: none;
+	color:#002991;
+	text-decoration:none;
+	outline:0;
+}
+
+#closewelcome:hover {
+background:#002991;
+color: #5EBFFF;
+text-decoration:none;
+border:none;
+outline:0;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 20px;
+	padding-left: 20px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+
+h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	color: #FFF;
+	line-height: 36px;
+	font-weight: normal;
+	font-variant: normal;
+	padding-top: 4px;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+
+}
+
+/* ~~ this fixed width container surrounds all other elements ~~ */
+#container {
+	width: 1000px;
+	height: 620px; /* the auto value on the sides, coupled with the width, centers the layout */
+	border: thin solid green;
+	text-align: left;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+/*right div for sliders*/
+#right{
+	width: 473px;
+	height: 515px;
+	background-color: #fff;
+	border: thin solid #FF0;
+	position: absolute;
+	top: 40px;
+	left: 514px;
+	padding: 5px;
+	z-index: 0;
+}
+/*monster main div*/
+#monster{
+	width: 500px;
+	height: 564px;
+	background-color: #fff;
+	border: thin solid #09F;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	padding: 0px;
+	z-index: 0;
+}
+#femalemonster {
+    width: 100%;
+    height: 50%;
+    border-style: solid;
+}
+#malemonster {
+     width: 100%;
+    height: 50%;
+    border-style: solid;
+}
+
+/*bottom footer*/
+#bottom_footer{
+	width: 478px;
+	height: 40px;
+	border: thin solid #C3F;
+	position: absolute;
+	top: 570px;
+	background-color: #fff;
+	left: 515px;
+	padding: 2px;
+	z-index: 0;
+}
+
+/*slider divs*/
+#floating {
+	width: 473px;
+	height: 515px;
+	padding: 3px;
+	
+}
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine{
+	border: thin solid #06F;
+	background-color:#000;
+	/*width: 143px;*/
+	width: 30%;
+	height: 50px;
+	padding: 4px;
+	float: left;
+	margin: 2px 3px 3px 2px;
+}
+
+
+
+.slider_look{
+	margin-left: 7px;
+}
+
+.label{
+	text-align: left;
+	margin-left: 5px;
+	padding: 0px;
+	word-spacing: 7px;
+}
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/* speeves */

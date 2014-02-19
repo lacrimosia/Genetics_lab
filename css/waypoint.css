@@ -1,0 +1,155 @@
+		* {
+			margin:0;
+			padding:0;
+		}
+
+		.inner {
+			width:460px;
+			padding:0 10px;
+			margin:0 auto;
+		}
+		
+		body {
+		color:#000000;
+		}
+
+		h1, h2, h3, h4 {
+      font-family:"PT Serif", serif;
+      font-weight:normal;
+    }
+
+		h1 {
+			font-size:53px;
+      color:#444a50;
+		}
+
+		h2 {
+      text-align:center;
+      background:#6a6272;
+      color:#eae2f2;
+      font-size:24px;
+    }
+
+		pre {
+      white-space:pre-wrap;
+      font-size:14px;
+      background:#fff;
+      padding:10px;
+    }
+
+		.header {
+			margin-bottom:24px;
+		}
+
+		.dials {
+			overflow:hidden;
+		}
+
+		.dial {
+			float:left;
+			width:140px;
+			margin-left:20px;
+			position:relative;
+		}
+
+		.dial.first {
+			margin-left:0;
+		}
+
+		.dial h3 {
+			font-weight:bold;
+			margin:0;
+		}
+
+		.dial ul {
+			background:#fff;
+			border:1px solid #eae2f2;
+			padding:25px 0 114px 0;
+			height:1px;
+			overflow-y:scroll;
+			margin:0;
+		}
+
+		.dial ul:before {
+			content:"";
+			border:10px solid #555;
+			width:1px;
+			height:1px;
+			display:block;
+			position:absolute;
+			bottom:105px;
+			left:0;
+			z-index:3;
+			border-top-color:transparent;
+			border-right-color:transparent;
+			border-bottom-color:transparent;
+		}
+
+		.dial li {
+			height:20px;
+			line-height:20px;
+			padding:10px 10px 10px 20px;
+			border-bottom:1px solid #ddd;
+			font-size:20px;
+		}
+
+		.dial li:first-child {
+			border-top:1px solid #ddd;
+		}
+
+		.text-color-dial li {
+			color:#fff;
+		}
+
+		li[data-value="8px"] {
+			font-size:8px;
+		}
+		li[data-value="9px"] {
+			font-size:9px;
+		}
+		li[data-value="10px"] {
+			font-size:10px;
+		}
+		li[data-value="11px"] {
+			font-size:11px;
+		}
+		li[data-value="12px"] {
+			font-size:12px;
+		}
+		li[data-value="13px"] {
+			font-size:13px;
+		}
+		li[data-value="14px"] {
+			font-size:14px;
+		}
+		li[data-value="#000"] {
+			background:#000;
+		}
+		li[data-value="#222"] {
+			background:#222;
+		}
+		li[data-value="#444"] {
+			background:#444;
+		}
+		li[data-value="#666"] {
+			background:#666;
+		}
+		li[data-value="#888"] {
+			background:#888;
+		}
+		li[data-value="#aaa"] {
+			background:#aaa;
+		}
+
+		.indicator {
+			position:absolute;
+			bottom:115px;
+			left:0;
+			height:1px;
+			width:120px;
+			background:red;
+		}
+
+		#example-target {
+			margin-top:32px;
+		}

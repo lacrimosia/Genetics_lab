@@ -1,0 +1,85 @@
+ { "quiztitle": "Animal Cell: Label the parts",
+  "quizcode": [
+      {
+          "points":"51",
+          "code":"6061"
+      },
+      {
+          "points":"50",
+          "code":"7235"
+      }
+  ],
+  "responsetext": "Your <span class='codes'>quiz code is: CODE</span>.",
+  "secretcode": "my secret code",
+  "questions":
+   [
+       {
+           "answerkey": "Vesicle",
+          "lineend_x": "352",
+           "lineend_y": "223"
+       }
+   ],
+   "traits":
+   [
+       {
+           "name":"Eye",
+           "type":"",
+           "allele1":"Two small eyes (E)",
+           "allele2":"One large eye (e)",
+           "genotype_phenotype":
+           [
+               "EE":"2 eyes",
+               "Ee":"2 eyes",
+               "Ee":"1 eye"
+           ]
+       },
+       {
+           "name":"Eye Color (incomplete)",
+           "type":"incomplete",
+           "allele1":"Red (R)",
+           "allele2":"White (R')",
+           "genotype_phenotype":
+           [
+               "RR":"Red",
+               "RR'":"Pink",
+               "R'R'":"White"
+           ]
+       },
+       {
+           "name":"Skin Color (codominant)",
+           "type":"codominant",
+           "allele1":"Green (G)",
+           "allele2":"Blue (B)",
+           "genotype_phenotype":
+           [
+               "GG":"Green",
+               "GB":"Green/Blue Swirl",
+               "BB":"Blue"
+           ]
+       },
+       {
+           "name":"Tail Shape",
+           "type":"",
+           "allele1":"Curly (C)",
+           "allele2":"Straight (c)",
+           "genotype_phenotype":
+           [
+               "CC":"Curly",
+               "Cc":"Curly",
+               "cc":"Straight"
+           ]
+       },
+       {
+           "name":"Tail Color",
+           "type":"",
+           "allele1":"Purple (P)",
+           "allele2":"Orange (p)",
+           "genotype_phenotype":
+           [
+               "PP":"Purple",
+               "Pp":"Purple",
+               "pp":"Orange"
+           ]
+       }
+   ]
+}
