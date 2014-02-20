@@ -26,11 +26,29 @@
            "type":"",
            "allele1":"Two small eyes (E)",
            "allele2":"One large eye (e)",
-           "genotype_phenotype":
+           "genotype":
            [
-               "EE":"2 eyes",
-               "Ee":"2 eyes",
-               "Ee":"1 eye"
+               "EE":
+               [
+                   {
+                       "phenotype":"2 eyes",
+                       "image":"eyes"
+                   }
+               ],
+               "Ee":
+               [
+                   {
+                       "phenotype":"2 eyes",
+                       "image":"eyes"
+                   }
+               ],
+               "Ee":
+               [
+                   {
+                       "phenotype":"1 eye",
+                       "image":"eye"
+                   }
+               ]
            ]
        },
        {
@@ -38,11 +56,29 @@
            "type":"incomplete",
            "allele1":"Red (R)",
            "allele2":"White (R')",
-           "genotype_phenotype":
+           "genotype":
            [
-               "RR":"Red",
-               "RR'":"Pink",
-               "R'R'":"White"
+               "RR":
+               [
+                   {
+                       "phenotype":"Red",
+                       "image":"red"
+                   }
+               ],
+               "RR'":
+               [
+                   {
+                       "phenotype":"Pink",
+                       "image":"pink"
+                   }
+               ],
+               "R'R'":
+               [
+                   {
+                       "phenotype":"White",
+                       "image":"white"
+                   }
+               ]
            ]
        },
        {
@@ -52,9 +88,27 @@
            "allele2":"Blue (B)",
            "genotype_phenotype":
            [
-               "GG":"Green",
-               "GB":"Green/Blue Swirl",
-               "BB":"Blue"
+               "GG":
+               [
+                   {
+                       "phenotype":"Green",
+                       "image":"g"
+                   }
+               ],
+               "GB":
+               [
+                   {
+                       "phenotype":"Green/Blue Swirl",
+                       "image":"gb"
+                   }
+               ],
+               "BB":
+               [
+                   {
+                       "phenotype":"Blue",
+                       "image":"b"
+                   }
+               ]
            ]
        },
        {
@@ -62,11 +116,29 @@
            "type":"",
            "allele1":"Curly (C)",
            "allele2":"Straight (c)",
-           "genotype_phenotype":
+           "genotype":
            [
-               "CC":"Curly",
-               "Cc":"Curly",
-               "cc":"Straight"
+               "CC":
+               [
+                   {
+                       "phenotype":"Curly",
+                       "image":"curled"
+                   }
+               ],
+               "Cc":
+               [
+                   {
+                       "phenotype":"Curly",
+                       "image":"curled"
+                   }
+               ],
+               "cc":
+               [
+                   {
+                       "phenotype":"Straight",
+                       "image":"straight"
+                   }
+               ]
            ]
        },
        {
@@ -74,11 +146,59 @@
            "type":"",
            "allele1":"Purple (P)",
            "allele2":"Orange (p)",
-           "genotype_phenotype":
+           "genotype":
            [
-               "PP":"Purple",
-               "Pp":"Purple",
-               "pp":"Orange"
+               "PP":
+               [
+                   {
+                       "phenotype":"Purple",
+                       "image":"p"
+                   }
+               ],
+               "Pp":
+               [
+                   {
+                       "phenotype":"Purple",
+                       "image":"p"
+                   }
+               ],
+               "pp":
+               [
+                   {
+                       "phenotype":"Orange",
+                       "image":"o"
+                   }
+               ]
+           ]
+       },
+       {
+           "name":"Tail",
+           "type":"regulatory",
+           "allele1":"Have tail (T)",
+           "allele2":"No tail (t)",
+           "genotype":
+           [
+               "TT":
+               [
+                   {
+                       "phenotype":"Has Tail",
+                       "image":"tail"
+                   }
+               ],
+               "Tt":
+               [
+                   {
+                       "phenotype":"Has Tail",
+                       "image":"tail"
+                   }
+               ],
+               "tt":
+               [
+                   {
+                       "phenotype":"No Tail",
+                       "image":""
+                   }
+               ]
            ]
        }
    ]
