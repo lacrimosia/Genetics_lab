@@ -200,6 +200,186 @@
                    }
                ]
            ]
+       },
+       {
+           "name":"Teeth",
+           "type":"",
+           "allele1":"Sharp (S)",
+           "allele2":"Round (s)",
+           "genotype":
+           [
+               "SS":
+               [
+                   {
+                       "phenotype":"Sharp Teeth",
+                       "image":"sharp_teeth"
+                   }
+               ],
+               "Ss":
+               [
+                   {
+                       "phenotype":"Sharp Teeth",
+                       "image":"sharp_teeth"
+                   }
+               ],
+               "ss":
+               [
+                   {
+                       "phenotype":"Round Teeth",
+                       "image":"round_teeth"
+                   }
+               ]
+           ]
+       },
+       {
+           "name":"Feet",
+           "type":"incomplete",
+           "allele1":"Four toes (F)",
+           "allele2":"Two toes (F')",
+           "genotype":
+           [
+               "FF":
+               [
+                   {
+                       "phenotype":"Four Toes",
+                       "image":"four_toes"
+                   }
+               ],
+               "Ff":
+               [
+                   {
+                       "phenotype":"Four Toes",
+                       "image":"four_toes"
+                   }
+               ],
+               "ff":
+               [
+                   {
+                       "phenotype":"Two Toes",
+                       "image":"two_toes"
+                   }
+               ]
+           ]
+       },
+       {
+           "name":"Horn Color",
+           "type":"",
+           "allele1":"Purple (W)",
+           "allele2":"White (w)",
+           "genotype":
+           [
+               "WW":
+               [
+                   {
+                       "phenotype":"Purple",
+                       "image":"purple_horn"
+                   }
+               ],
+               "Ww":
+               [
+                   {
+                       "phenotype":"Purple",
+                       "image":"purple_horn"
+                   }
+               ],
+               "ww":
+               [
+                   {
+                       "phenotype":"White",
+                       "image":"white_horn"
+                   }
+               ]
+           ]
+       },
+       {
+           "name":"Ear Shape",
+           "type":"",
+           "allele1":"Pointy (Y)",
+           "allele2":"Round (y)",
+           "genotype":
+           [
+               "YY":
+               [
+                   {
+                       "phenotype":"Pointy",
+                       "image":"sharp_ears"
+                   }
+               ],
+               "Yy":
+               [
+                   {
+                       "phenotype":"Pointy",
+                       "image":"sharp_ears"
+                   }
+               ],
+               "yy":
+               [
+                   {
+                       "phenotype":"Round",
+                       "image":"round_ears"
+                   }
+               ]
+           ]
+       },
+       {
+           "name":"Claws",
+           "type":"incomplete",
+           "allele1":"Long (L)",
+           "allele2":"Short (l)",
+           "genotype":
+           [
+               "LL":
+               [
+                   {
+                       "phenotype":"Long Claws",
+                       "image":"long_claws"
+                   }
+               ],
+               "Ll":
+               [
+                   {
+                       "phenotype":"Medium Claws",
+                       "image":"medium_claws"
+                   }
+               ],
+               "ll":
+               [
+                   {
+                       "phenotype":"Short Claws",
+                       "image":"short_claws"
+                   }
+               ]
+           ]
+       },
+{
+           "name":"Color-Blindness",
+           "type":"Sex-linked recessive",
+           "allele1":"Normal (X+)",
+           "allele2":"Colorblind (Xo)",
+           "genotype":
+           [
+               "X+X+":
+               [
+                   {
+                       "phenotype":"Normal",
+                       "image":""
+                   }
+               ],
+               "X+X-":
+               [
+                   {
+                       "phenotype":"Normal",
+                       "image":""
+                   }
+               ],
+               "X-X-":
+               [
+                   {
+                       "phenotype":"Colorblind",
+                       "image":"white"
+                   }
+               ]
+           ]
        }
    ]
 }
