@@ -39,7 +39,7 @@ function openHelpDialog() {
         
         width: '650px',
         height: 'auto',
-	position: {my: 'center', at: 'center', of: 'body'},
+	position: {my: 'center', at: 'center', of: 'div'},
         
         show: 'fade',
         hide: 'fade',
@@ -61,3 +61,10 @@ function openHelpDialog() {
 }
 
 $('#closewelcome').tooltip();
+
+//gender, bodyType, color, shape
+//image name generator
+function setImageName(gender, bodyType, color, shape){
+	
+}
+
