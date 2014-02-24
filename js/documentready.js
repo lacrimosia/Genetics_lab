@@ -1,4 +1,20 @@
-//this document contains code for the dialog box and buttons
+var jsonfile = 'js/data.json';
+var data = JSON.parse(getData(jsonfile));
+var fadeOutTransitiontime = 2000;
+var numQuestions = data.questions.length;
+
+var maxtries = 3;
+
+var correctColor = '#0fc7a4';
+var incorrectColor = 'red';
+
+// set female traits
+var femaleTraits = data.traits;
+// set male traits and shuffle genotypes
+var maleTraits = data.traits;
+$.each(maleTraits, function(i, v){
+    console.log(v);
+});
 
 $(document).ready(function() {
     //reload page
@@ -60,4 +76,21 @@ function openHelpDialog() {
     $('#helpMessage').css("margin-left","0px");
 }
 
+//+ Jonas Raoni Soares Silva
+//@ http://jsfromhell.com/array/shuffle [v1.0]
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+
+// TODO: what is this doing here?
 $('#closewelcome').tooltip();
+
+
+function getData(jsonfile){
+    return $.ajax({
+        url:jsonfile,
+        async: false,
+        dataType: 'json'
+    }).responseText;
+}

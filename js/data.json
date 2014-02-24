@@ -28,27 +28,29 @@
            "allele2":"One large eye (e)",
            "genotype":
            [
-               "EE":
-               [
-                   {
-                       "phenotype":"2 eyes",
-                       "image":"eyes"
-                   }
-               ],
-               "Ee":
-               [
-                   {
-                       "phenotype":"2 eyes",
-                       "image":"eyes"
-                   }
-               ],
-               "Ee":
-               [
-                   {
-                       "phenotype":"1 eye",
-                       "image":"eye"
-                   }
-               ]
+               {
+                   "EE":
+                   [
+                       {
+                           "phenotype":"2 eyes",
+                           "image":"eyes"
+                       }
+                   ],
+                   "Ee":
+                   [
+                       {
+                           "phenotype":"2 eyes",
+                           "image":"eyes"
+                       }
+                   ],
+                   "Ee":
+                   [
+                       {
+                           "phenotype":"1 eye",
+                           "image":"eye"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -58,27 +60,29 @@
            "allele2":"White (R')",
            "genotype":
            [
-               "RR":
-               [
-                   {
-                       "phenotype":"Red",
-                       "image":"red"
-                   }
-               ],
-               "RR'":
-               [
-                   {
-                       "phenotype":"Pink",
-                       "image":"pink"
-                   }
-               ],
-               "R'R'":
-               [
-                   {
-                       "phenotype":"White",
-                       "image":"white"
-                   }
-               ]
+               {
+                   "RR":
+                   [
+                       {
+                           "phenotype":"Red",
+                           "image":"red"
+                       }
+                   ],
+                   "RR'":
+                   [
+                       {
+                           "phenotype":"Pink",
+                           "image":"pink"
+                       }
+                   ],
+                   "R'R'":
+                   [
+                       {
+                           "phenotype":"White",
+                           "image":"white"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -88,27 +92,29 @@
            "allele2":"Blue (B)",
            "genotype_phenotype":
            [
-               "GG":
-               [
-                   {
-                       "phenotype":"Green",
-                       "image":"g"
-                   }
-               ],
-               "GB":
-               [
-                   {
-                       "phenotype":"Green/Blue Swirl",
-                       "image":"gb"
-                   }
-               ],
-               "BB":
-               [
-                   {
-                       "phenotype":"Blue",
-                       "image":"b"
-                   }
-               ]
+               {
+                   "GG":
+                   [
+                       {
+                           "phenotype":"Green",
+                           "image":"g"
+                       }
+                   ],
+                   "GB":
+                   [
+                       {
+                           "phenotype":"Green/Blue Swirl",
+                           "image":"gb"
+                       }
+                   ],
+                   "BB":
+                   [
+                       {
+                           "phenotype":"Blue",
+                           "image":"b"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -118,27 +124,29 @@
            "allele2":"Straight (c)",
            "genotype":
            [
-               "CC":
-               [
-                   {
-                       "phenotype":"Curly",
-                       "image":"curled"
-                   }
-               ],
-               "Cc":
-               [
-                   {
-                       "phenotype":"Curly",
-                       "image":"curled"
-                   }
-               ],
-               "cc":
-               [
-                   {
-                       "phenotype":"Straight",
-                       "image":"straight"
-                   }
-               ]
+               {
+                   "CC":
+                   [
+                       {
+                           "phenotype":"Curly",
+                           "image":"curled"
+                       }
+                   ],
+                   "Cc":
+                   [
+                       {
+                           "phenotype":"Curly",
+                           "image":"curled"
+                       }
+                   ],
+                   "cc":
+                   [
+                       {
+                           "phenotype":"Straight",
+                           "image":"straight"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -148,27 +156,29 @@
            "allele2":"Orange (p)",
            "genotype":
            [
-               "PP":
-               [
-                   {
-                       "phenotype":"Purple",
-                       "image":"p"
-                   }
-               ],
-               "Pp":
-               [
-                   {
-                       "phenotype":"Purple",
-                       "image":"p"
-                   }
-               ],
-               "pp":
-               [
-                   {
-                       "phenotype":"Orange",
-                       "image":"o"
-                   }
-               ]
+               {
+                   "PP":
+                   [
+                       {
+                           "phenotype":"Purple",
+                           "image":"p"
+                       }
+                   ],
+                   "Pp":
+                   [
+                       {
+                           "phenotype":"Purple",
+                           "image":"p"
+                       }
+                   ],
+                   "pp":
+                   [
+                       {
+                           "phenotype":"Orange",
+                           "image":"o"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -178,27 +188,29 @@
            "allele2":"No tail (t)",
            "genotype":
            [
-               "TT":
-               [
-                   {
-                       "phenotype":"Has Tail",
-                       "image":"tail"
-                   }
-               ],
-               "Tt":
-               [
-                   {
-                       "phenotype":"Has Tail",
-                       "image":"tail"
-                   }
-               ],
-               "tt":
-               [
-                   {
-                       "phenotype":"No Tail",
-                       "image":""
-                   }
-               ]
+               {
+                   "TT":
+                   [
+                       {
+                           "phenotype":"Has Tail",
+                           "image":"tail"
+                       }
+                   ],
+                   "Tt":
+                   [
+                       {
+                           "phenotype":"Has Tail",
+                           "image":"tail"
+                       }
+                   ],
+                   "tt":
+                   [
+                       {
+                           "phenotype":"No Tail",
+                           "image":""
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -208,27 +220,29 @@
            "allele2":"Round (s)",
            "genotype":
            [
-               "SS":
-               [
-                   {
-                       "phenotype":"Sharp Teeth",
-                       "image":"sharp_teeth"
-                   }
-               ],
-               "Ss":
-               [
-                   {
-                       "phenotype":"Sharp Teeth",
-                       "image":"sharp_teeth"
-                   }
-               ],
-               "ss":
-               [
-                   {
-                       "phenotype":"Round Teeth",
-                       "image":"round_teeth"
-                   }
-               ]
+               {
+                   "SS":
+                   [
+                       {
+                           "phenotype":"Sharp Teeth",
+                           "image":"sharp_teeth"
+                       }
+                   ],
+                   "Ss":
+                   [
+                       {
+                           "phenotype":"Sharp Teeth",
+                           "image":"sharp_teeth"
+                       }
+                   ],
+                   "ss":
+                   [
+                       {
+                           "phenotype":"Round Teeth",
+                           "image":"round_teeth"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -238,27 +252,29 @@
            "allele2":"Two toes (F')",
            "genotype":
            [
-               "FF":
-               [
-                   {
-                       "phenotype":"Four Toes",
-                       "image":"four_toes"
-                   }
-               ],
-               "Ff":
-               [
-                   {
-                       "phenotype":"Four Toes",
-                       "image":"four_toes"
-                   }
-               ],
-               "ff":
-               [
-                   {
-                       "phenotype":"Two Toes",
-                       "image":"two_toes"
-                   }
-               ]
+               {
+                   "FF":
+                   [
+                       {
+                           "phenotype":"Four Toes",
+                           "image":"four_toes"
+                       }
+                   ],
+                   "Ff":
+                   [
+                       {
+                           "phenotype":"Four Toes",
+                           "image":"four_toes"
+                       }
+                   ],
+                   "ff":
+                   [
+                       {
+                           "phenotype":"Two Toes",
+                           "image":"two_toes"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -268,27 +284,29 @@
            "allele2":"White (w)",
            "genotype":
            [
-               "WW":
-               [
-                   {
-                       "phenotype":"Purple",
-                       "image":"purple_horn"
-                   }
-               ],
-               "Ww":
-               [
-                   {
-                       "phenotype":"Purple",
-                       "image":"purple_horn"
-                   }
-               ],
-               "ww":
-               [
-                   {
-                       "phenotype":"White",
-                       "image":"white_horn"
-                   }
-               ]
+               {
+                   "WW":
+                   [
+                       {
+                           "phenotype":"Purple",
+                           "image":"purple_horn"
+                       }
+                   ],
+                   "Ww":
+                   [
+                       {
+                           "phenotype":"Purple",
+                           "image":"purple_horn"
+                       }
+                   ],
+                   "ww":
+                   [
+                       {
+                           "phenotype":"White",
+                           "image":"white_horn"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -298,27 +316,29 @@
            "allele2":"Round (y)",
            "genotype":
            [
-               "YY":
-               [
-                   {
-                       "phenotype":"Pointy",
-                       "image":"sharp_ears"
-                   }
-               ],
-               "Yy":
-               [
-                   {
-                       "phenotype":"Pointy",
-                       "image":"sharp_ears"
-                   }
-               ],
-               "yy":
-               [
-                   {
-                       "phenotype":"Round",
-                       "image":"round_ears"
-                   }
-               ]
+               {
+                   "YY":
+                   [
+                       {
+                           "phenotype":"Pointy",
+                           "image":"sharp_ears"
+                       }
+                   ],
+                   "Yy":
+                   [
+                       {
+                           "phenotype":"Pointy",
+                           "image":"sharp_ears"
+                       }
+                   ],
+                   "yy":
+                   [
+                       {
+                           "phenotype":"Round",
+                           "image":"round_ears"
+                       }
+                   ]
+               }
            ]
        },
        {
@@ -328,57 +348,61 @@
            "allele2":"Short (l)",
            "genotype":
            [
-               "LL":
-               [
-                   {
-                       "phenotype":"Long Claws",
-                       "image":"long_claws"
-                   }
-               ],
-               "Ll":
-               [
-                   {
-                       "phenotype":"Medium Claws",
-                       "image":"medium_claws"
-                   }
-               ],
-               "ll":
-               [
-                   {
-                       "phenotype":"Short Claws",
-                       "image":"short_claws"
-                   }
-               ]
+               {
+                   "LL":
+                   [
+                       {
+                           "phenotype":"Long Claws",
+                           "image":"long_claws"
+                       }
+                   ],
+                   "Ll":
+                   [
+                       {
+                           "phenotype":"Medium Claws",
+                           "image":"medium_claws"
+                       }
+                   ],
+                   "ll":
+                   [
+                       {
+                           "phenotype":"Short Claws",
+                           "image":"short_claws"
+                       }
+                   ]
+               }
            ]
        },
-{
+       {
            "name":"Color-Blindness",
            "type":"Sex-linked recessive",
            "allele1":"Normal (X+)",
            "allele2":"Colorblind (Xo)",
            "genotype":
            [
-               "X+X+":
-               [
-                   {
-                       "phenotype":"Normal",
-                       "image":""
-                   }
-               ],
-               "X+X-":
-               [
-                   {
-                       "phenotype":"Normal",
-                       "image":""
-                   }
-               ],
-               "X-X-":
-               [
-                   {
-                       "phenotype":"Colorblind",
-                       "image":"white"
-                   }
-               ]
+               {
+                   "X+X+":
+                   [
+                       {
+                           "phenotype":"Normal",
+                           "image":""
+                       }
+                   ],
+                   "X+X-":
+                   [
+                       {
+                           "phenotype":"Normal",
+                           "image":""
+                       }
+                   ],
+                   "X-X-":
+                   [
+                       {
+                           "phenotype":"Colorblind",
+                           "image":"white"
+                       }
+                   ]
+               }
            ]
        }
    ]
