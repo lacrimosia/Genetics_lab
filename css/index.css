@@ -108,24 +108,24 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /*right div for sliders*/
 #right{
-	width: 473px;
+	width: 500px;
 	height: 515px;
 	background-color: #fff;
 	border: thin solid #FF0;
 	position: absolute;
-	top: 40px;
-	left: 514px;
+	top: 25px;
+	left: 465px;
 	padding: 5px;
 	z-index: 0;
 }
 /*monster main div*/
 #monster{
-	width: 500px;
+	width: 450px;
 	height: 564px;
 	background-color: #fff;
 	border: thin solid #09F;
 	position: absolute;
-	top: 40px;
+	top: 25px;
 	left: 0px;
 	padding: 0px;
 	z-index: 0;
@@ -180,13 +180,13 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /*bottom footer*/
 #bottom_footer{
-	width: 478px;
+	width: 480px;
 	height: 40px;
 	border: thin solid #C3F;
 	position: absolute;
-	top: 570px;
+	top: 560px;
 	background-color: #fff;
-	left: 515px;
+	left: 465px;
 	padding: 2px;
 	z-index: 0;
 }
@@ -200,7 +200,8 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 }
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine{
 	border: thin solid #06F;
-	background-color:#000;
+	/*background-color:#000;*/
+	background-color:#ffffff;
 	/*width: 143px;*/
 	width: 30%;
 	height: 50px;
