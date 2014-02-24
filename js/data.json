@@ -30,19 +30,21 @@
            [
                {
                    "EE":
-                   [
                        {
                            "phenotype":"2 eyes",
                            "image":"eyes"
                        }
-                   ],
+               },
+               {
                    "Ee":
                    [
                        {
                            "phenotype":"2 eyes",
                            "image":"eyes"
                        }
-                   ],
+                   ]
+               },
+               {
                    "Ee":
                    [
                        {
@@ -62,26 +64,24 @@
            [
                {
                    "RR":
-                   [
-                       {
-                           "phenotype":"Red",
-                           "image":"red"
-                       }
-                   ],
+                   {
+                       "phenotype":"Red",
+                       "image":"red"
+                   }
+               },
+               {
                    "RR'":
-                   [
-                       {
-                           "phenotype":"Pink",
-                           "image":"pink"
-                       }
-                   ],
+                   {
+                       "phenotype":"Pink",
+                       "image":"pink"
+                   }
+               },
+               {
                    "R'R'":
-                   [
-                       {
-                           "phenotype":"White",
-                           "image":"white"
-                       }
-                   ]
+                   {
+                       "phenotype":"White",
+                       "image":"white"
+                   }
                }
            ]
        },
@@ -94,26 +94,24 @@
            [
                {
                    "GG":
-                   [
-                       {
-                           "phenotype":"Green",
-                           "image":"g"
-                       }
-                   ],
+                   {
+                       "phenotype":"Green",
+                       "image":"g"
+                   }
+               },
+               {
                    "GB":
-                   [
-                       {
-                           "phenotype":"Green/Blue Swirl",
-                           "image":"gb"
-                       }
-                   ],
-                   "BB":
-                   [
-                       {
-                           "phenotype":"Blue",
-                           "image":"b"
-                       }
-                   ]
+                   {
+                       "phenotype":"Green/Blue Swirl",
+                       "image":"gb"
+                   }
+               },
+               {
+                   "BB":   
+                   {
+                       "phenotype":"Blue",
+                       "image":"b"
+                   }
                }
            ]
        },
@@ -126,26 +124,24 @@
            [
                {
                    "CC":
-                   [
-                       {
-                           "phenotype":"Curly",
-                           "image":"curled"
-                       }
-                   ],
+                   {
+                       "phenotype":"Curly",
+                       "image":"curled"
+                   }
+               },
+               {
                    "Cc":
-                   [
-                       {
-                           "phenotype":"Curly",
-                           "image":"curled"
-                       }
-                   ],
-                   "cc":
-                   [
-                       {
-                           "phenotype":"Straight",
-                           "image":"straight"
-                       }
-                   ]
+                   {
+                       "phenotype":"Curly",
+                       "image":"curled"
+                   }
+               },
+               {
+                   "cc":   
+                   {
+                       "phenotype":"Straight",
+                       "image":"straight"
+                   }
                }
            ]
        },
@@ -158,26 +154,24 @@
            [
                {
                    "PP":
-                   [
-                       {
-                           "phenotype":"Purple",
-                           "image":"p"
-                       }
-                   ],
+                   {
+                       "phenotype":"Purple",
+                       "image":"p"
+                   }
+               },
+               {
                    "Pp":
-                   [
-                       {
-                           "phenotype":"Purple",
-                           "image":"p"
-                       }
-                   ],
-                   "pp":
-                   [
-                       {
-                           "phenotype":"Orange",
-                           "image":"o"
-                       }
-                   ]
+                   {
+                       "phenotype":"Purple",
+                       "image":"p"
+                   }
+               },
+               {
+                   "pp":   
+                   {
+                       "phenotype":"Orange",
+                       "image":"o"
+                   }
                }
            ]
        },
@@ -190,26 +184,24 @@
            [
                {
                    "TT":
-                   [
-                       {
-                           "phenotype":"Has Tail",
-                           "image":"tail"
-                       }
-                   ],
+                   {
+                       "phenotype":"Has Tail",
+                       "image":"tail"
+                   }
+               },
+               {
                    "Tt":
-                   [
-                       {
-                           "phenotype":"Has Tail",
-                           "image":"tail"
-                       }
-                   ],
-                   "tt":
-                   [
-                       {
-                           "phenotype":"No Tail",
-                           "image":""
-                       }
-                   ]
+                   {
+                       "phenotype":"Has Tail",
+                       "image":"tail"
+                   }
+               },
+               {
+                   "tt":   
+                   {
+                       "phenotype":"No Tail",
+                       "image":""
+                   }
                }
            ]
        },
@@ -222,26 +214,24 @@
            [
                {
                    "SS":
-                   [
-                       {
-                           "phenotype":"Sharp Teeth",
-                           "image":"sharp_teeth"
-                       }
-                   ],
+                   {
+                       "phenotype":"Sharp Teeth",
+                       "image":"sharp_teeth"
+                   }
+               },
+               {
                    "Ss":
-                   [
-                       {
-                           "phenotype":"Sharp Teeth",
-                           "image":"sharp_teeth"
-                       }
-                   ],
-                   "ss":
-                   [
-                       {
-                           "phenotype":"Round Teeth",
-                           "image":"round_teeth"
-                       }
-                   ]
+                   {
+                       "phenotype":"Sharp Teeth",
+                       "image":"sharp_teeth"
+                   }
+               },
+               {
+                   "ss":   
+                   {
+                       "phenotype":"Round Teeth",
+                       "image":"round_teeth"
+                   }
                }
            ]
        },
@@ -254,26 +244,24 @@
            [
                {
                    "FF":
-                   [
-                       {
-                           "phenotype":"Four Toes",
-                           "image":"four_toes"
-                       }
-                   ],
+                   {
+                       "phenotype":"Four Toes",
+                       "image":"four_toes"
+                   }
+               },
+               {
                    "Ff":
-                   [
-                       {
-                           "phenotype":"Four Toes",
-                           "image":"four_toes"
-                       }
-                   ],
-                   "ff":
-                   [
-                       {
-                           "phenotype":"Two Toes",
-                           "image":"two_toes"
-                       }
-                   ]
+                   {
+                       "phenotype":"Four Toes",
+                       "image":"four_toes"
+                   }
+               },
+               {
+                   "ff":   
+                   {
+                       "phenotype":"Two Toes",
+                       "image":"two_toes"
+                   }
                }
            ]
        },
@@ -286,26 +274,24 @@
            [
                {
                    "WW":
-                   [
-                       {
-                           "phenotype":"Purple",
-                           "image":"purple_horn"
-                       }
-                   ],
+                   {
+                       "phenotype":"Purple",
+                       "image":"purple_horn"
+                   }
+               },
+               {
                    "Ww":
-                   [
-                       {
-                           "phenotype":"Purple",
-                           "image":"purple_horn"
-                       }
-                   ],
-                   "ww":
-                   [
-                       {
-                           "phenotype":"White",
-                           "image":"white_horn"
-                       }
-                   ]
+                   {
+                       "phenotype":"Purple",
+                       "image":"purple_horn"
+                   }
+               },
+               {
+                   "ww":   
+                   {
+                       "phenotype":"White",
+                       "image":"white_horn"
+                   }
                }
            ]
        },
@@ -318,26 +304,24 @@
            [
                {
                    "YY":
-                   [
-                       {
-                           "phenotype":"Pointy",
-                           "image":"sharp_ears"
-                       }
-                   ],
+                   {
+                       "phenotype":"Pointy",
+                       "image":"sharp_ears"
+                   }
+               },
+               {
                    "Yy":
-                   [
-                       {
-                           "phenotype":"Pointy",
-                           "image":"sharp_ears"
-                       }
-                   ],
-                   "yy":
-                   [
-                       {
-                           "phenotype":"Round",
-                           "image":"round_ears"
-                       }
-                   ]
+                   {
+                       "phenotype":"Pointy",
+                       "image":"sharp_ears"
+                   }
+               },
+               {
+                   "yy":   
+                   {
+                       "phenotype":"Round",
+                       "image":"round_ears"
+                   }
                }
            ]
        },
@@ -350,26 +334,24 @@
            [
                {
                    "LL":
-                   [
-                       {
-                           "phenotype":"Long Claws",
-                           "image":"long_claws"
-                       }
-                   ],
+                   {
+                       "phenotype":"Long Claws",
+                       "image":"long_claws"
+                   }
+               },
+               {
                    "Ll":
-                   [
-                       {
-                           "phenotype":"Medium Claws",
-                           "image":"medium_claws"
-                       }
-                   ],
-                   "ll":
-                   [
-                       {
-                           "phenotype":"Short Claws",
-                           "image":"short_claws"
-                       }
-                   ]
+                   {
+                       "phenotype":"Medium Claws",
+                       "image":"medium_claws"
+                   }
+               },
+               {
+                   "ll":   
+                   {
+                       "phenotype":"Short Claws",
+                       "image":"short_claws"
+                   }
                }
            ]
        },
@@ -382,26 +364,24 @@
            [
                {
                    "X+X+":
-                   [
-                       {
-                           "phenotype":"Normal",
-                           "image":""
-                       }
-                   ],
+                   {
+                       "phenotype":"Normal",
+                       "image":""
+                   }
+               },
+               {
                    "X+X-":
-                   [
-                       {
-                           "phenotype":"Normal",
-                           "image":""
-                       }
-                   ],
-                   "X-X-":
-                   [
-                       {
-                           "phenotype":"Colorblind",
-                           "image":"white"
-                       }
-                   ]
+                   {
+                       "phenotype":"Normal",
+                       "image":""
+                   }
+               },
+               {
+                   "X-X-":   
+                   {
+                       "phenotype":"Colorblind",
+                       "image":"white"
+                   }
                }
            ]
        }
