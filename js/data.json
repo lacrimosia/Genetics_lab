@@ -90,7 +90,7 @@
            "type":"codominant",
            "allele1":"Green (G)",
            "allele2":"Blue (B)",
-           "genotype_phenotype":
+           "genotype":
            [
                {
                    "GG":

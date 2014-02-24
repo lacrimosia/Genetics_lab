@@ -15,16 +15,15 @@ var maleTraits = data.traits;
 
 // maleTraitObject
 var maleTraitObject = {};
-
+console.log(data.traits);
+console.log(maleTraits);
 $.each(maleTraits, function(i, v){
-console.log(v);
-    console.log(v.genotype[2]);
+console.log(v.name);
     console.log(shuffle(v.genotype));
-    console.log(v.genotype[2]);
     maleTraitObject[v.name] = v.genotype[0];
-    console.log( maleTraitObject);
-});
 
+});
+    console.log( maleTraitObject);
 
 $(document).ready(function() {
     //reload page
@@ -89,7 +88,6 @@ function openHelpDialog() {
 //+ Jonas Raoni Soares Silva
 //@ http://jsfromhell.com/array/shuffle [v1.0]
 function shuffle(o){ //v1.0
-    console.log(o);
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
