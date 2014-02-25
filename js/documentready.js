@@ -67,8 +67,9 @@ $(document).ready(function() {
     // tail
     // male_tail_o/p_curled/straight.png
     var maleTail = getTailImageName(maleTraitObject);
-    console.log(maleTail);
+
     // body
+    var maleTail = getTailImageName(maleTraitObject);
 
     // horn
 
