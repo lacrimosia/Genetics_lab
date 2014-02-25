@@ -97,24 +97,29 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ this fixed width container surrounds all other elements ~~ */
 #container {
-	width: 1000px;
-	height: 620px; /* the auto value on the sides, coupled with the width, centers the layout */
-	border: thin solid green;
+	width: 933px;
+	background-color:#ffffff;
+	height: 605px; /* the auto value on the sides, coupled with the width, centers the layout */
+	border: thin solid #141B56;
 	text-align: left;
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	box-shadow: 3px 3px 3px #CCC;
+	-webkit-box-shadow: 3px 3px 3px #CCC;
+	-ms-box-shadow: 3px 3px 3px #CCC;
+	-moz-box-shadow: 3px 3px 3px #CCC;
 }
 
 /*right div for sliders*/
 #right{
-	width: 500px;
+	width: 450px;
 	height: 515px;
 	background-color: #fff;
-	border: thin solid #FF0;
+	border: thin solid #141B56;
 	position: absolute;
 	top: 25px;
-	left: 465px;
+	left: 460px;
 	padding: 5px;
 	z-index: 0;
 }
@@ -123,7 +128,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	width: 450px;
 	height: 564px;
 	background-color: #fff;
-	border: thin solid #09F;
+/*	border: thin solid #09F;*/
 	position: absolute;
 	top: 25px;
 	left: 0px;
@@ -133,14 +138,14 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 #femalemonster {
     width: 100%;
     height: 50%;
-    border-style: solid;
     position: relative;
+	border: thin solid #141B56;
 }
 #malemonster {
     width: 100%;
     height: 50%;
-    border-style: solid;
     position:relative;
+	border: thin solid #141B56;
 }
 
 .tail, .monsterbody, .horn, .toes, .claws, .ears, .teeth, .eyes, .eyelid {
@@ -180,15 +185,34 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /*bottom footer*/
 #bottom_footer{
-	width: 480px;
+	width: 459px;
 	height: 40px;
-	border: thin solid #C3F;
+	/*border: thin solid #C3F;*/
 	position: absolute;
-	top: 560px;
-	background-color: #fff;
-	left: 465px;
+	top: 557px;
+	background-color: #ffffff;
+	left: 456px;
 	padding: 2px;
 	z-index: 0;
+}
+
+#bottom_footer input{
+	background-color: #141B56;
+	color: #f26b0f;
+	width: 115px;
+	height: 39px;
+	border: none; 
+	margin-right: 3px;
+	float: right;
+}
+
+#bottom_footer input#create{
+	background-color: #f26b0f;
+	color: #ffffff;
+	width: 218px;
+	height: 39px;
+	border: none;
+	font-size: 22px;
 }
 
 /*slider divs*/
@@ -199,15 +223,15 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	
 }
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine{
-	border: thin solid #06F;
+	/*border: thin solid #06F;*/
 	/*background-color:#000;*/
 	background-color:#ffffff;
 	/*width: 143px;*/
 	width: 30%;
 	height: 50px;
-	padding: 4px;
+	padding: 2px;
 	float: left;
-	margin: 2px 3px 3px 2px;
+	margin: 2px;
 }
 
 
@@ -217,6 +241,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 }
 
 .label{
+	font-size: 14px;
 	text-align: left;
 	margin-left: 5px;
 	padding: 0px;
