@@ -9,7 +9,7 @@
 	border: thin solid #000000 !important;
 /*background: #edc410;*/
 background: #141B56;
-height: 5px;
+height: 2px;
 }
 
 /*slider piece color*/
@@ -21,8 +21,9 @@ height: 5px;
 	-webkit-box-shadow: #222222 2px 2px 3px;
 	cursor: pointer;
 	width: 10px;
+	height: 15px;
 	/*background: #FEE30A;*/
-	background: #e9e9e9;
+	background: #f26b0f;
 	outline: none;
 
 }
