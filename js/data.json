@@ -19,6 +19,7 @@
            "lineend_y": "223"
        }
    ],
+   "bodycolor": ["b", "bg", "g"],
    "traits":
    [
        {
