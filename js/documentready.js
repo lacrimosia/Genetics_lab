@@ -9,24 +9,34 @@ var correctColor = '#0fc7a4';
 var incorrectColor = 'red';
 
 // set female traits
+var initFemaleTraits = data.traits;
 var femaleTraits = data.traits;
 var femalediv = 'female' ;
+
 // set male traits and shuffle genotypes
 var maleTraits = data.traits;
-
-// maleTraitObject
 var malediv = 'male' ;
-var maleTraitObject = {};
 
+// create our male trait object for generating
+// the default male
+var maleTraitObject = {};
 // set a few defaults for male
 maleTraitObject['gender'] = 'male';
 
+// create our female trait object for 
+// generating the default male
+var initFemaleTraitObject = {};
+var femaleTraitObject = {};
+
+// set a few defaults for female
+initFemaleTraitObject['gender'] = 'female';
+femaleTraitObject['gender'] = 'female';
+
 // we shuffle all of the genotypes for each trait
-// so that we can generate the male
-$.each(maleTraits, function(i, v){
-    shuffle(v.genotype);
-    maleTraitObject[v.name] = v.genotype[0];
-});
+// so that we can generate the male, and create the 
+// new object (maleTraitObject/initFemaleTraitObject)
+shuffleTraits(maleTraits, maleTraitObject);
+shuffleTraits(initFemaleTraits, initFemaleTraitObject);
 
 $(document).ready(function() {
     //reload page
@@ -59,6 +69,8 @@ $(document).ready(function() {
 
     // build malemonster 
     createMonster(malediv, maleTraitObject);
+    // build femalemonster
+    createMonster(femalediv, initFemaleTraitObject);
 });
 
 function addMonsterImage(mydiv, myclass, imageName){
@@ -69,34 +81,32 @@ function createMonster(monsterdiv, traitObject) {
     // build our male monster
     
     // tail
-    // male_tail_o/p_curled/straight.png
-    var maleTail = getImageName('tail', traitObject);
-    addMonsterImage(monsterdiv, 'tail', maleTail);
+    var tail = getImageName('tail', traitObject);
+    addMonsterImage(monsterdiv, 'tail', tail);
     // body
-    var maleBody = getImageName('body', traitObject);
-    addMonsterImage(monsterdiv, 'body', maleBody);
+    var body = getImageName('body', traitObject);
+    addMonsterImage(monsterdiv, 'body', body);
     // horn
-    var maleHorn = getImageName('horn', traitObject);
-    addMonsterImage(monsterdiv, 'horn', maleHorn);
+    var horn = getImageName('horn', traitObject);
+    addMonsterImage(monsterdiv, 'horn', horn);
     // toes
-    var maleToes = getImageName('toes', traitObject);
-    addMonsterImage(monsterdiv, 'toes', maleToes);
+    var toes = getImageName('toes', traitObject);
+    addMonsterImage(monsterdiv, 'toes', toes);
     // claws
-    var maleClaws = getImageName('claws', traitObject);
-    addMonsterImage(monsterdiv, 'claws', maleClaws);
+    var claws = getImageName('claws', traitObject);
+    addMonsterImage(monsterdiv, 'claws', claws);
     // ears
-    var maleEars = getImageName('ears', traitObject);
-    addMonsterImage(monsterdiv, 'ears', maleEars);
+    var ears = getImageName('ears', traitObject);
+    addMonsterImage(monsterdiv, 'ears', ears);
     // teeth
-    var maleTeeth = getImageName('teeth', traitObject);
-    addMonsterImage(monsterdiv, 'teeth', maleTeeth);
+    var teeth = getImageName('teeth', traitObject);
+    addMonsterImage(monsterdiv, 'teeth', teeth);
     // eye
-    var maleEye = getImageName('eye', traitObject);
-    console.log(maleEye);
-    addMonsterImage(monsterdiv, 'eyes', maleEye);
+    var eye = getImageName('eye', traitObject);
+    addMonsterImage(monsterdiv, 'eyes', eye);
     //eyelid
-    var maleEyelid = getImageName('eyelid', traitObject);
-    addMonsterImage(monsterdiv, 'eyelid', maleEyelid);
+    var eyelid = getImageName('eyelid', traitObject);
+    addMonsterImage(monsterdiv, 'eyelid', eyelid);
 }
 
 
@@ -219,3 +229,10 @@ function shuffle(o){ //v1.0
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
+
+function shuffleTraits(traits, object) {
+    $.each(traits, function(i, v){
+        shuffle(v.genotype);
+        object[v.name] = v.genotype[0];
+    });
+}
