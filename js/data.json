@@ -19,7 +19,6 @@
            "lineend_y": "223"
        }
    ],
-   "bodycolor": ["b", "bg", "g"],
    "traits":
    [
        {
@@ -31,33 +30,29 @@
            [
                {
                    "EE":
-                       {
-                           "phenotype":"2 eyes",
-                           "image":"eyes"
-                       }
+                   {
+                       "phenotype":"2 eyes",
+                       "image":"eyes"
+                   }
                },
                {
                    "Ee":
-                   [
-                       {
-                           "phenotype":"2 eyes",
-                           "image":"eyes"
-                       }
-                   ]
+                   {
+                       "phenotype":"2 eyes",
+                       "image":"eyes"
+                   }
                },
                {
                    "Ee":
-                   [
-                       {
-                           "phenotype":"1 eye",
-                           "image":"eye"
-                       }
-                   ]
+                   {
+                       "phenotype":"1 eye",
+                       "image":"eye"
+                   }
                }
            ]
        },
        {
-           "name":"Eye Color (incomplete)",
+           "name":"Eye Color",
            "type":"incomplete",
            "allele1":"Red (R)",
            "allele2":"White (R')",
@@ -87,7 +82,7 @@
            ]
        },
        {
-           "name":"Skin Color (codominant)",
+           "name":"Skin Color",
            "type":"codominant",
            "allele1":"Green (G)",
            "allele2":"Blue (B)",
@@ -157,21 +152,21 @@
                    "PP":
                    {
                        "phenotype":"Purple",
-                       "image":"p"
+                       "image":"purple"
                    }
                },
                {
                    "Pp":
                    {
                        "phenotype":"Purple",
-                       "image":"p"
+                       "image":"purple"
                    }
                },
                {
                    "pp":   
                    {
                        "phenotype":"Orange",
-                       "image":"o"
+                       "image":"orange"
                    }
                }
            ]
@@ -217,21 +212,21 @@
                    "SS":
                    {
                        "phenotype":"Sharp Teeth",
-                       "image":"sharp_teeth"
+                       "image":"sharp"
                    }
                },
                {
                    "Ss":
                    {
                        "phenotype":"Sharp Teeth",
-                       "image":"sharp_teeth"
+                       "image":"sharp"
                    }
                },
                {
                    "ss":   
                    {
                        "phenotype":"Round Teeth",
-                       "image":"round_teeth"
+                       "image":"round"
                    }
                }
            ]
@@ -247,21 +242,21 @@
                    "FF":
                    {
                        "phenotype":"Four Toes",
-                       "image":"four_toes"
+                       "image":"four"
                    }
                },
                {
                    "Ff":
                    {
                        "phenotype":"Four Toes",
-                       "image":"four_toes"
+                       "image":"four"
                    }
                },
                {
                    "ff":   
                    {
                        "phenotype":"Two Toes",
-                       "image":"two_toes"
+                       "image":"two"
                    }
                }
            ]
@@ -277,21 +272,21 @@
                    "WW":
                    {
                        "phenotype":"Purple",
-                       "image":"purple_horn"
+                       "image":"purple"
                    }
                },
                {
                    "Ww":
                    {
                        "phenotype":"Purple",
-                       "image":"purple_horn"
+                       "image":"purple"
                    }
                },
                {
                    "ww":   
                    {
                        "phenotype":"White",
-                       "image":"white_horn"
+                       "image":"white"
                    }
                }
            ]
@@ -307,21 +302,21 @@
                    "YY":
                    {
                        "phenotype":"Pointy",
-                       "image":"sharp_ears"
+                       "image":"sharp"
                    }
                },
                {
                    "Yy":
                    {
                        "phenotype":"Pointy",
-                       "image":"sharp_ears"
+                       "image":"sharp"
                    }
                },
                {
                    "yy":   
                    {
                        "phenotype":"Round",
-                       "image":"round_ears"
+                       "image":"round"
                    }
                }
            ]
@@ -337,21 +332,21 @@
                    "LL":
                    {
                        "phenotype":"Long Claws",
-                       "image":"long_claws"
+                       "image":"long"
                    }
                },
                {
                    "Ll":
                    {
                        "phenotype":"Medium Claws",
-                       "image":"medium_claws"
+                       "image":"medium"
                    }
                },
                {
                    "ll":   
                    {
                        "phenotype":"Short Claws",
-                       "image":"short_claws"
+                       "image":"short"
                    }
                }
            ]

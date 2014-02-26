@@ -148,7 +148,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	border: thin solid #141B56;
 }
 
-.tail, .monsterbody, .horn, .toes, .claws, .ears, .teeth, .eyes, .eyelid {
+.tail, .body, .horn, .toes, .claws, .ears, .teeth, .eyes, .eyelid {
     position: absolute;
 }
 .tail {

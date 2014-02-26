@@ -13,16 +13,11 @@ var femaleTraits = data.traits;
 // set male traits and shuffle genotypes
 var maleTraits = data.traits;
 
-// body colors
-var bodyColors = data.bodycolor;
-
 // maleTraitObject
 var maleTraitObject = {};
 
 // set a few defaults for male
 maleTraitObject['gender'] = 'male';
-maleTraitObject['bodycolor'] = shuffle(bodyColors)[0];
-
 
 // we shuffle all of the genotypes for each trait
 // so that we can generate the male
@@ -39,54 +34,64 @@ $(document).ready(function() {
     });
 
     // open instructional dialog on documentready
-    openHelpDialog();
+    //openHelpDialog();
     
     // click to open instructional dialog
-    $('#help').click(function(){
-        openHelpDialog();
-    });
+    // $('#help').click(function(){
+    //     openHelpDialog();
+    // });
     
-    $('#helpMessage').dialog('open').on('keydown', function(evt) {
-        if (evt.keyCode === $.ui.keyCode.ESCAPE) {
-            $('#helpMessage').dialog('close');
-            startQuiz(questionOrder);
-        }                
-        evt.stopPropagation();
-    });
+    // $('#helpMessage').dialog('open').on('keydown', function(evt) {
+    //     if (evt.keyCode === $.ui.keyCode.ESCAPE) {
+    //         $('#helpMessage').dialog('close');
+    //         startQuiz(questionOrder);
+    //     }                
+    //     evt.stopPropagation();
+    // });
 	
-	//close dialog on click
-    $('#closewelcome').click(function() {
-        $('#helpMessage').dialog('close');
-        $('#divBottom').removeClass('hide');
-    });
+    //     //close dialog on click
+    // $('#closewelcome').click(function() {
+    //     $('#helpMessage').dialog('close');
+    //     $('#divBottom').removeClass('hide');
+    // });
 
     // build our male monster
     console.log( maleTraitObject);
-    console.log(maleTraitObject['Tail Shape'][Object.keys(maleTraitObject['Tail Shape'])]);
     
     // tail
     // male_tail_o/p_curled/straight.png
-    var maleTail = getTailImageName(maleTraitObject);
-
+    var maleTail = getImageName('tail', maleTraitObject);
+    addMonsterImage('malemonster', 'tail', maleTail);
     // body
-    var maleTail = getTailImageName(maleTraitObject);
-
+    var maleBody = getImageName('body', maleTraitObject);
+    addMonsterImage('malemonster', 'body', maleBody);
     // horn
-
+    var maleHorn = getImageName('horn', maleTraitObject);
+    addMonsterImage('malemonster', 'horn', maleHorn);
     // toes
-    
+    var maleToes = getImageName('toes', maleTraitObject);
+    addMonsterImage('malemonster', 'toes', maleToes);
     // claws
-
+    var maleClaws = getImageName('claws', maleTraitObject);
+    addMonsterImage('malemonster', 'claws', maleClaws);
     // ears
-
+    var maleEars = getImageName('ears', maleTraitObject);
+    addMonsterImage('malemonster', 'ears', maleEars);
     // teeth
-
+    var maleTeeth = getImageName('teeth', maleTraitObject);
+    addMonsterImage('malemonster', 'teeth', maleTeeth);
     // eye
-
+    var maleEye = getImageName('eye', maleTraitObject);
+    console.log(maleEye);
+    addMonsterImage('malemonster', 'eyes', maleEye);
     //eyelid
-
+    var maleEyelid = getImageName('eyelid', maleTraitObject);
+    addMonsterImage('malemonster', 'eyelid', maleEyelid);
 });
 
+function addMonsterImage(mydiv, myclass, imageName){
+    $('#'+mydiv).find('.'+myclass).prepend('<img src="images/'+imageName+'" alt="Monster '+myclass+'" />');
+}
 function openHelpDialog() {
     $('#helpMessage').dialog({
         autoOpen: true,
@@ -125,54 +130,77 @@ function shuffle(o){ //v1.0
 };
 
 // TODO: what is this doing here?
-$('#closewelcome').tooltip();
+//$('#closewelcome').tooltip();
 
 // HEAD
 //gender, bodyType, color, shape
 //image name generator
-function setImageName(bodyTraits) {
-    // Object
-    // Claws: Object
-    // Color-Blindness: Object
-    // Ear Shape: Object
-    // Eye: Object
-    // Eye Color (incomplete): Object
-    // Feet: Object
-    // Horn Color: Object
-    // Skin Color (codominant): Object
-    // Tail: Object
-    // Tail Color: Object
-    // Tail Shape: Object
-    // Teeth: Object
-    
-    // start our file name
-    // gender_bodypart_shape_size_color_number.png
-    // male_toes_na_na_b_4.png
-    // male_body_na_na_g_na.png
-
-    // walk through each part of the name
+function getImageName(bodypart, bodyTraits) {
+    // returns the name of the image
+    var filename;
 
     // gender
-    var filename = bodyTraits['gender'] + '_';
+    // eye/eyes have a different prefix
+    if (bodypart != 'eye' && bodypart != 'eyelid') {
+        filename = bodyTraits['gender'] + '/'+ bodypart + '_'; 
+    } else {
+        if (bodypart == 'eye'){
+            filename = bodyTraits['gender'] + '/'+ bodyTraits['Eye'][Object.keys(bodyTraits['Eye'])].image + '_';
+        } else {
+            if (bodyTraits['Eye'][Object.keys(bodyTraits['Eye'])].image == 'eye' ) {
+                filename = bodyTraits['gender'] + '/eyelid.png';
+            } else {
+                filename = bodyTraits['gender'] + '/eyelids.png';
+            }
+        }
+    }
 
-    // bodypart
-    filename = filename + bodyTraits['bodycolor'] + '_';
-    
-    // shape
-    console.log(bodyTraits['Tail Shape']);
-    // if (bodyTraits['shape']
-    // ])
-    
-}
-
-function getTailImageName(bodyTraits) {
-    // returns the name of the tail image
-    // gender
-    var filename = bodyTraits['gender'] + '_';
-    // color
-    filename = filename + bodyTraits['Tail Color'][Object.keys(bodyTraits['Tail Color'])].image + '_';
-    // shape
-    filename = filename + bodyTraits['Tail Shape'][Object.keys(bodyTraits['Tail Shape'])].image + '_tail.png';
+    // put together our filename
+    switch(bodypart)
+    {
+    case "tail":
+        // shape
+        filename = filename + bodyTraits['Tail Shape'][Object.keys(bodyTraits['Tail Shape'])].image + '_';
+        // color
+        filename = filename + bodyTraits['Tail Color'][Object.keys(bodyTraits['Tail Color'])].image + '.png';    
+        break;
+    case "body":
+        // color
+        filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '.png';
+        break;
+    case "horn":
+        // color
+        filename = filename + bodyTraits['Horn Color'][Object.keys(bodyTraits['Horn Color'])].image + '.png';
+        break;
+    case "toes":
+        // color
+        filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
+        //number
+        filename = filename + bodyTraits['Feet'][Object.keys(bodyTraits['Feet'])].image + '.png';
+        break;
+    case "claws":
+        // color
+        filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
+        //number
+        filename = filename + bodyTraits['Claws'][Object.keys(bodyTraits['Claws'])].image + '.png';
+        break;
+    case "ears":
+        // color
+        filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
+        //number
+        filename = filename + bodyTraits['Ear Shape'][Object.keys(bodyTraits['Ear Shape'])].image + '.png';
+        break;
+    case "teeth":
+        // color
+        filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
+        //number
+        filename = filename + bodyTraits['Teeth'][Object.keys(bodyTraits['Teeth'])].image + '.png';
+        break;
+    case "eye":
+        //color
+        filename = filename + bodyTraits['Eye Color'][Object.keys(bodyTraits['Eye Color'])].image + '.png';
+        break;
+    }
 
     return filename;
 }
@@ -184,4 +212,3 @@ function getData(jsonfile){
         dataType: 'json'
     }).responseText;
 }
-// cd217be17d7271cc575877ce9c20363e03ef340b
