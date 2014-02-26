@@ -159,10 +159,10 @@ function getImageName(bodypart, bodyTraits) {
     switch(bodypart)
     {
     case "tail":
-        // shape
-        filename = filename + bodyTraits['Tail Shape'][Object.keys(bodyTraits['Tail Shape'])].image + '_';
         // color
-        filename = filename + bodyTraits['Tail Color'][Object.keys(bodyTraits['Tail Color'])].image + '.png';    
+        filename = filename + bodyTraits['Tail Color'][Object.keys(bodyTraits['Tail Color'])].image + '_';
+        // shape
+        filename = filename + bodyTraits['Tail Shape'][Object.keys(bodyTraits['Tail Shape'])].image + '.png';    
         break;
     case "body":
         // color
