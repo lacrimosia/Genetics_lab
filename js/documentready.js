@@ -60,6 +60,8 @@ $(document).ready(function() {
     
     // tail
     // male_tail_o/p_curled/straight.png
+	
+	//body types of male with parameters
     var maleTail = getImageName('tail', maleTraitObject);
     addMonsterImage('malemonster', 'tail', maleTail);
     // body
@@ -89,8 +91,10 @@ $(document).ready(function() {
     addMonsterImage('malemonster', 'eyelid', maleEyelid);
 });
 
+//display male monster image
 function addMonsterImage(mydiv, myclass, imageName){
-    $('#'+mydiv).find('.'+myclass).prepend('<img src="images/'+imageName+'" alt="Monster '+myclass+'" />');
+/*    $('#'+mydiv).find('.'+myclass).prepend('<img src="images/'+imageName+'" alt="Monster '+myclass+'" />');*/
+	$('#'+mydiv).find('.'+myclass).prepend('<img src="images/'+imageName+'"/>');
 }
 function openHelpDialog() {
     $('#helpMessage').dialog({
@@ -204,6 +208,7 @@ function getImageName(bodypart, bodyTraits) {
 
     return filename;
 }
+
 
 function getData(jsonfile){
     return $.ajax({
