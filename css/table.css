@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS for Table */
+
+/*entire table*/
+table.reference, table.tecspec {
+border-collapse:collapse;
+margin:0px;
+margin-bottom:6px;
+width: 444px;;
+}
+
+table.reference tr {
+font:12px verdana;
+padding:right:3px;
+}
+table.reference tr:nth-child(odd) {background-color:#F6F4F0;}
+table.reference tr:nth-child(even) {background-color:#ffffff;}
+
+table.reference tr.fixzebra {background-color:#F6F4F0;}
+
+table.reference th{
+color:#ffffff;
+background-color:#555555;
+border:1px solid #222222;
+padding:3px;
+text-align:left;
+font:12px verdana;
+}
+
+table.reference th a:link,table.reference th a:visited{
+color:#ffffff;
+}
+
+table.reference th a:hover,table.reference th a:active{
+color:#EE872A;
+}
+
+table.reference td{
+border:1px solid #d4d4d4;padding:5px;padding-top:7px;padding-bottom:7px;vertical-align:top;
+}
