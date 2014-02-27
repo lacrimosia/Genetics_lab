@@ -8,10 +8,15 @@ var maxtries = 3;
 var correctColor = '#0fc7a4';
 var incorrectColor = 'red';
 
+//// Set male and female globals
 // set female traits
+var defaultTraitObject = {};
+createTraitObject(data.traits, defaultTraitObject, 0);
+
 var initFemaleTraits = data.traits;
 var femaleTraits = data.traits;
 var femalediv = 'female' ;
+
 
 // set male traits and shuffle genotypes
 var maleTraits = data.traits;
@@ -35,8 +40,8 @@ femaleTraitObject['gender'] = 'female';
 // we shuffle all of the genotypes for each trait
 // so that we can generate the male, and create the 
 // new object (maleTraitObject/initFemaleTraitObject)
-shuffleTraits(maleTraits, maleTraitObject);
-shuffleTraits(initFemaleTraits, initFemaleTraitObject);
+createTraitObject(maleTraits, maleTraitObject, 1);
+createTraitObject(initFemaleTraits, initFemaleTraitObject, 1);
 
 $(document).ready(function() {
     //reload page
@@ -81,32 +86,58 @@ function createMonster(monsterdiv, traitObject) {
     // build our male monster
     
     // tail
-    var tail = getImageName('tail', traitObject);
+    var tail = getImageName(monsterdiv, 'tail', traitObject);
     addMonsterImage(monsterdiv, 'tail', tail);
     // body
-    var body = getImageName('body', traitObject);
+    var body = getImageName(monsterdiv, 'body', traitObject);
     addMonsterImage(monsterdiv, 'body', body);
     // horn
-    var horn = getImageName('horn', traitObject);
+    var horn = getImageName(monsterdiv, 'horn', traitObject);
     addMonsterImage(monsterdiv, 'horn', horn);
     // toes
-    var toes = getImageName('toes', traitObject);
+    var toes = getImageName(monsterdiv, 'toes', traitObject);
     addMonsterImage(monsterdiv, 'toes', toes);
     // claws
-    var claws = getImageName('claws', traitObject);
+    var claws = getImageName(monsterdiv, 'claws', traitObject);
     addMonsterImage(monsterdiv, 'claws', claws);
     // ears
-    var ears = getImageName('ears', traitObject);
+    var ears = getImageName(monsterdiv, 'ears', traitObject);
     addMonsterImage(monsterdiv, 'ears', ears);
     // teeth
-    var teeth = getImageName('teeth', traitObject);
+    var teeth = getImageName(monsterdiv, 'teeth', traitObject);
     addMonsterImage(monsterdiv, 'teeth', teeth);
     // eye
-    var eye = getImageName('eye', traitObject);
+    var eye = getImageName(monsterdiv, 'eye', traitObject);
     addMonsterImage(monsterdiv, 'eyes', eye);
     //eyelid
-    var eyelid = getImageName('eyelid', traitObject);
+    var eyelid = getImageName(monsterdiv, 'eyelid', traitObject);
     addMonsterImage(monsterdiv, 'eyelid', eyelid);
+}
+
+function addSlider(monsterdiv, trait, bodyTraits, traitKey){
+    // get template divs
+    var newdiv = $('#slider_template').html();
+
+    // now we generate the slider
+    // 
+    newdiv = newdiv.replace(/TRAIT/g, trait);
+
+    // generate our label
+    var label = '';
+    $.each(defaultTraitObject[traitKey], function(i, v){
+        for(var key in v){
+            if (i == 0){
+                label = ' '+key+' ';
+            } else {
+                label = label+'| '+key+' ';
+            }
+        }
+    });
+    console.log(label);
+    newdiv = newdiv.replace(/LABELTEXT/,label);
+
+    // append the new slider
+    $('#'+monsterdiv+'sliders').find('.slidercontainer').prepend(newdiv);
 }
 
 
@@ -114,10 +145,9 @@ function createMonster(monsterdiv, traitObject) {
 //$('#closewelcome').tooltip();
 
 //image name generator
-function getImageName(bodypart, bodyTraits) {
+function getImageName(monsterdiv, bodypart, bodyTraits) {
     // returns the name of the image
     var filename;
-
     // gender
     // eye/eyes have a different prefix
     if (bodypart != 'eye' && bodypart != 'eyelid') {
@@ -125,6 +155,7 @@ function getImageName(bodypart, bodyTraits) {
     } else {
         if (bodypart == 'eye'){
             filename = bodyTraits['gender'] + '/'+ bodyTraits['Eye'][Object.keys(bodyTraits['Eye'])].image + '_';
+            addSlider(monsterdiv, bodypart, bodyTraits, 'Eye');
         } else {
             if (bodyTraits['Eye'][Object.keys(bodyTraits['Eye'])].image == 'eye' ) {
                 filename = bodyTraits['gender'] + '/eyelid.png';
@@ -140,44 +171,53 @@ function getImageName(bodypart, bodyTraits) {
     case "tail":
         // color
         filename = filename + bodyTraits['Tail Color'][Object.keys(bodyTraits['Tail Color'])].image + '_';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Tail Color');
         // shape
         filename = filename + bodyTraits['Tail Shape'][Object.keys(bodyTraits['Tail Shape'])].image + '.png';    
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Tail Shape');
         break;
     case "body":
         // color
         filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '.png';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Skin Color');
         break;
     case "horn":
         // color
         filename = filename + bodyTraits['Horn Color'][Object.keys(bodyTraits['Horn Color'])].image + '.png';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Horn Color');
         break;
     case "toes":
         // color
         filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
         //number
         filename = filename + bodyTraits['Feet'][Object.keys(bodyTraits['Feet'])].image + '.png';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Feet');
         break;
     case "claws":
         // color
         filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
         //number
         filename = filename + bodyTraits['Claws'][Object.keys(bodyTraits['Claws'])].image + '.png';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Claws');
         break;
     case "ears":
         // color
         filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
         //number
         filename = filename + bodyTraits['Ear Shape'][Object.keys(bodyTraits['Ear Shape'])].image + '.png';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Ear Shape');
         break;
     case "teeth":
         // color
         filename = filename + bodyTraits['Skin Color'][Object.keys(bodyTraits['Skin Color'])].image + '_';
         //number
         filename = filename + bodyTraits['Teeth'][Object.keys(bodyTraits['Teeth'])].image + '.png';
+                addSlider(monsterdiv, bodypart, bodyTraits, 'Teeth');
         break;
     case "eye":
         //color
         filename = filename + bodyTraits['Eye Color'][Object.keys(bodyTraits['Eye Color'])].image + '.png';
+        addSlider(monsterdiv, bodypart, bodyTraits, 'Eye Color');
         break;
     }
 
@@ -230,9 +270,17 @@ function shuffle(o){ //v1.0
     return o;
 };
 
-function shuffleTraits(traits, object) {
+function createTraitObject(traits, object, doshuffle) {
     $.each(traits, function(i, v){
-        shuffle(v.genotype);
-        object[v.name] = v.genotype[0];
+        if(parseInt(doshuffle) == 1) {
+            shuffle(v.genotype);
+        }
+        if(typeof object['gender'] != "undefined") {
+            object[v.name] = v.genotype[0];
+        } else {
+            object[v.name] = v.genotype;
+        }
     });
 }
+
+

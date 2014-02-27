@@ -216,13 +216,23 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 }
 
 /*slider divs*/
+#femalesliders {
+    height: 50%;
+    width: 100%;
+}
+#malesliders {
+    clear: both;
+    height: 50%;
+    width: 100%;
+}
+
 #floating {
 	width: 473px;
 	height: 515px;
 	padding: 3px;
 	
 }
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine{
+.slider{
 	/*border: thin solid #06F;*/
 	/*background-color:#000;*/
 	background-color:#ffffff;
