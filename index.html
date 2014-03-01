@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="./css/smoothness.css">
     <link rel="stylesheet" href="./css/dialog.css">
     <link rel="stylesheet" href="./css/slider.css">
-    <link rel="stylesheet" href="./css/table.css">
     
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <!--<script type="text/javascript" src="js/jquery.shuffle.min.js"></script>-->
-    <script type="text/javascript" src="js/slider.js"></script>
+    <!-- <script type="text/javascript" src="js/slider.js"></script> -->
     <script type="text/javascript" src="js/documentready.js"></script>
   </head>
   <body>
@@ -35,7 +34,7 @@
          <span class="claws"></span>
          <span class="ears"></span>
          <span class="teeth"></span>
-         <span class="eyes"></span>
+         <span class="eye"></span>
          <span class="eyelid"></span>
        </div>
        <div id="male">
@@ -47,36 +46,32 @@
          <span class="claws"></span>
          <span class="ears"></span>
          <span class="teeth"></span>
-         <span class="eyes"></span>
+         <span class="eye"></span>
          <span class="eyelid"></span>
        </div>
      </div><!--end monster-->
      
      <!--start slider container-->
      <div id="right">
-     	<div id="floating"> <!--floating div-->
-     	<!--div one--><!-- This is the female sliders-->
-        <div id="femalesliders">
-          <h3>Female</h3>
-          <div class='slidercontainer'></div>
-        </div>
-        <div id="malesliders">
-          <h3>Male</h3>
-          <div class='slidercontainer'></div>
-        </div>
-
-        <div id="slider_template">
-          <div class="slider TRAITslider"><!--skin color-->
-     	    <div class="label">LABELTEXT</div>
-     	    <div id="slider" class="slider_look slider_style"></div>
-          </div>
-        </div>
-        <!-- end one--> 
-        
-        
-        </div><!--end floating div-->
+       <div id="floating"> <!--floating div-->
+     	 <!--div one--><!-- This is the female sliders-->
+         <div id="femalesliders">
+           <strong>Female</strong>
+           <div class='slidercontainer'></div>
+         </div>
+         <div id="malesliders">
+           <strong>Male</strong>
+           <div class='slidercontainer'></div>
+         </div>
+         <!-- end one--> 
+       </div><!--end floating div-->
      </div><!--end sliders container-->
-     
+     <div id="slider_template">
+       <div id="sliderINDEX" class="slider"><!--skin color-->
+     	 <div class="label">LABELTEXT</div>
+     	 <div class="slider_look slider_style sliderINDEX TRAIT"></div>
+       </div>
+     </div>
      <!--footer container with buttons-->
      <div id="bottom_footer">
      <input type="button" value="Create" id="create">
