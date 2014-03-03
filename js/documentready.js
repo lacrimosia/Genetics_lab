@@ -79,6 +79,7 @@ $(document).ready(function() {
 
 });
 
+
 function addMonsterImage(mydiv, myclass, imageName){
     $('#'+mydiv).find('.'+myclass).prepend('<img src="images/'+imageName+'" alt="Monster '+myclass+'" />');
 }
