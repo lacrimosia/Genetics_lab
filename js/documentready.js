@@ -207,6 +207,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             replaceMonsterImage(gender, traitKey, newImage);
         }
     });
+	//disable male sliders
     if (monsterdiv == 'male') {
         $('.slider'+sliderIndex).slider('disable');        
     }

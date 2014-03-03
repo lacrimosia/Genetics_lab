@@ -100,7 +100,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	width: 933px;
 	background-color:#ffffff;
 	height: 605px; /* the auto value on the sides, coupled with the width, centers the layout */
-	border: thin solid #141B56;
+	border: 1px solid #141B56;
 	text-align: left;
 	position: absolute;
 	top: 0px;
@@ -116,7 +116,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	width: 450px;
 	height: 515px;
 	background-color: #fff;
-	border: thin solid #141B56;
+	border: 1px solid #141B56;
 	position: absolute;
 	top: 25px;
 	left: 460px;
@@ -139,13 +139,13 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
     width: 100%;
     height: 50%;
     position: relative;
-	border: thin solid #141B56;
+	border: 1px solid #141B56;
 }
 #male {
     width: 100%;
     height: 50%;
     position:relative;
-	border: thin solid #141B56;
+	border: 1px solid #141B56;
 }
 
 .tail, .body, .horn, .toes, .claws, .ears, .teeth, .eye, .eyelid {
@@ -191,12 +191,12 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	position: absolute;
 	top: 557px;
 	background-color: #ffffff;
-	left: 456px;
+	left: 459px;
 	padding: 2px;
 	z-index: 0;
 }
 
-#bottom_footer input{
+/*#bottom_footer input{
 	background-color: #141B56;
 	color: #f26b0f;
 	width: 115px;
@@ -204,15 +204,106 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	border: none; 
 	margin-right: 3px;
 	float: right;
-}
+}*/
 
 #bottom_footer input#create{
-	background-color: #f26b0f;
-	color: #ffffff;
-	width: 218px;
+-moz-box-shadow:inset 0px -3px 0px -6px #ff6600;
+	-webkit-box-shadow:inset 0px -3px 0px -6px #ff6600;
+	box-shadow:inset 0px -3px 0px -6px #ff6600;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa9450), color-stop(1, #f26a0f) );
+	background:-moz-linear-gradient( center top, #fa9450 5%, #f26a0f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa9450', endColorstr='#f26a0f');
+	background-color:#fa9450;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #a38e7f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:226px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #000000;
 	height: 39px;
-	border: none;
+	border: 1px solid #141B56;
 	font-size: 22px;
+
+
+}
+
+#bottom_footer input#reset{
+	/*background-color: #141B56;*/
+	-moz-box-shadow:inset 0px -3px 0px -6px #2b2b2b;
+	-webkit-box-shadow:inset 0px -3px 0px -6px #2b2b2b;
+	box-shadow:inset 0px -3px 0px -6px #2b2b2b;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4d59ba), color-stop(1, #141b56) );
+	background:-moz-linear-gradient( center top, #4d59ba 5%, #141b56 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d59ba', endColorstr='#141b56');
+	background-color:#4d59ba;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #696969;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width: 226px;
+	height: 39px;
+	border: thin solid #141B56;
+	font-size: 22px;
+}
+
+#bottom_footer input#reset:hover{
+	/*background-color: #141B56;*/
+background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #141b56), color-stop(1, #4d59ba) );
+	background:-moz-linear-gradient( center top, #141b56 5%, #4d59ba 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#141b56', endColorstr='#4d59ba');
+	background-color:#141b56;
+
+	/*background-color: #141B56;*/
+	width: 226px;
+	height: 39px;
+	border: thin solid #141B56;
+	font-size: 22px;
+}
+
+
+#bottom_footer input#create:hover{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f26a0f), color-stop(1, #fa9450) );
+	background:-moz-linear-gradient( center top, #f26a0f 5%, #fa9450 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f26a0f', endColorstr='#fa9450');
+	background-color:#f26a0f;
 }
 
 /*slider divs*/
