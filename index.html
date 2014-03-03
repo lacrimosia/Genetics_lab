@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/smoothness.css">
     <link rel="stylesheet" href="./css/dialog.css">
     <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/table.css">
     
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -52,13 +53,224 @@
      <!--start slider container-->
      <div id="right">
        <div id="floating"> <!--floating div-->
+       <!--table-->
+               <!--table to generate female and -->
+               <div id="tables" class="">
+               <strong>Female</strong>
+        <table class="reference">
+<tr>
+<th>Trait</th>
+<th>Allele 1</th>
+<th>Allele 2</th>
+<th>Genotype</th>
+<th>Phenotype</th>
+</tr>
+
+<!--Eye Color-->
+<tr>
+<td>Eye Color</td>
+<td>Red (E)</td>
+<td>White (R')</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Eye-->
+<tr>
+<td>Eye</td>
+<td>Two Small Eyes (E)</td>
+<td>One Large Eye (e)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Teeth-->
+<tr>
+<td>Teeth</td>
+<td>Sharp (S)</td>
+<td>Round (s)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Ear Shape-->
+<tr>
+<td>Ear Shape</td>
+<td>Pointy (Y)</td>
+<td>Round (y)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Claws-->
+<tr>
+<td>Claws</td>
+<td>Long (L)</td>
+<td>Short (l)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Feet-->
+<tr>
+<td>Feet</td>
+<td>Four Toes (F)</td>
+<td>Two Toes (f)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Horn Color-->
+<tr>
+<td>Horn Color</td>
+<td>Purple (W)</td>
+<td>White (w)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Skin Color-->
+<tr>
+<td>Skin Color</td>
+<td>Green (G)</td>
+<td>Blue (B)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Tail Shape-->
+<tr>
+<td>Tail Shape</td>
+<td>Curly (C)</td>
+<td>Straight (c)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Tail Color-->
+<tr>
+<td>Tail Color</td>
+<td>Purple (P)</td>
+<td>Orange (p)</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<!--end table-->
+
+ <!--table to generate male -->
+        <table class="reference2">
+        <strong>Male</strong>
+<tr>
+<th>Trait</th>
+<th>Allele 1</th>
+<th>Allele 2</th>
+<th>Genotype</th>
+<th>Phenotype</th>
+</tr>
+
+<!--Eye Color-->
+<tr>
+<td>Eye Color</td>
+<td>Red (E)</td>
+<td>White (R')</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Eye-->
+<tr>
+<td>Eye</td>
+<td>Two Small Eyes (E)</td>
+<td>One Large Eye (e)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Teeth-->
+<tr>
+<td>Teeth</td>
+<td>Sharp (S)</td>
+<td>Round (s)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Ear Shape-->
+<tr>
+<td>Ear Shape</td>
+<td>Pointy (Y)</td>
+<td>Round (y)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Claws-->
+<tr>
+<td>Claws</td>
+<td>Long (L)</td>
+<td>Short (l)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Feet-->
+<tr>
+<td>Feet</td>
+<td>Four Toes (F)</td>
+<td>Two Toes (f)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Horn Color-->
+<tr>
+<td>Horn Color</td>
+<td>Purple (W)</td>
+<td>White (w)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Skin Color-->
+<tr>
+<td>Skin Color</td>
+<td>Green (G)</td>
+<td>Blue (B)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Tail Shape-->
+<tr>
+<td>Tail Shape</td>
+<td>Curly (C)</td>
+<td>Straight (c)</td>
+<td></td>
+<td></td>
+</tr>
+
+<!--Tail Color-->
+<tr>
+<td>Tail Color</td>
+<td>Purple (P)</td>
+<td>Orange (p)</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+<!--end table--> 
+<!--END TABLES-->
      	 <!--div one--><!-- This is the female sliders-->
-         <div id="femalesliders">
+         <div id="femalesliders" class="hide">
            <strong>Female</strong>
-           <div class='slidercontainer'></div>
+           <div class='slidercontainer hide'></div>
          </div>
-         <div id="malesliders">
-           <strong>Male</strong>
+         
+         	
+         <div id="malesliders" class="hide">
+         <strong>Male</strong>
            <div class='slidercontainer'></div>
          </div>
          <!-- end one--> 

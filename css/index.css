@@ -18,6 +18,10 @@ body {
         display: none;
 }
 
+.hide{
+	display: none;
+}
+
 .texts{
 	margin-left:-3000px; display:none; color:#000000;
 }
