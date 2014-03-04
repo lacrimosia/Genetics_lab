@@ -22,6 +22,12 @@
      <span>Dr. Frankensteins Genetics Lab</span>
      <!--end header-->
      
+       <!--print page-->
+     <div id="print">
+     <input type="button" id="print" value="Print" class="hide" onClick="window.print()">
+     </div>
+     <!--end print-->
+
      <!--start monster-->
      <div id="monster">
        <div id="female">
@@ -55,7 +61,7 @@
        <div id="floating"> <!--floating div-->
        <!--table-->
                <!--table to generate female and -->
-               <div id="tables" class="">
+               <div id="tables" class="hide">
                <strong>Female</strong>
         <table class="reference">
 <tr>
@@ -263,14 +269,14 @@
 <!--end table--> 
 <!--END TABLES-->
      	 <!--div one--><!-- This is the female sliders-->
-         <div id="femalesliders" class="hide">
-           <strong>Female</strong>
-           <div class='slidercontainer hide'></div>
+         <div id="femalesliders" class="">
+           <span class="titles hide">Female</span>
+           <div class='slidercontainer'></div>
          </div>
          
          	
-         <div id="malesliders" class="hide">
-         <strong>Male</strong>
+         <div id="malesliders" class="">
+         <span class="titles hide">Male</span>
            <div class='slidercontainer'></div>
          </div>
          <!-- end one--> 
@@ -285,8 +291,7 @@
      <!--footer container with buttons-->
      <div id="bottom_footer">
      <input type="button" value="Reset" id="reset" onClick="window.location.reload()">
-     <input type="button" value="Print Results" id="create">
-    <!-- <input type="button" value="Print" id="print">--> 
+     <input type="button" value="Print Results" onClick="addTable()" id="create">
      </div><!--end footer container-->
      
       <!--help menu-->
@@ -298,6 +303,10 @@
       </div><!-- end help menu-->
      
  </div> <!--end container-->
+ 
+  <!--OE logo-->
+        <div id="oe_logo"><a href="http://online.unlv.edu/"><img src="images/oelogo.jpg"></a></div>
+  <!--end logo-->
 
 </body>
 </html>

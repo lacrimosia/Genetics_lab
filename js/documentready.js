@@ -37,6 +37,9 @@ var femaleTraitObject = {};
 initFemaleTraitObject['gender'] = 'female';
 femaleTraitObject['gender'] = 'female';
 
+//show out slider titles
+$('strong.titles').removeClass('hide');
+
 // we shuffle all of the genotypes for each trait
 // so that we can generate the male, and create the 
 // new object (maleTraitObject/initFemaleTraitObject)
@@ -187,13 +190,19 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
 
             // I buried the trait in $(this).attr('class'), so we need to find it
             var c = $(this).attr('class').split(' ')
+			
+			/*c selects the value of the slider*/
+			
             var traitKey = '';
             $.each(c, function(i, v){
                 // get our trait from the slider
                 if (!v.match(/(slider|widget|corner)/)){
                     traitKey = v;
+					
                 }
             });
+			
+			console.log(traitKey);
 
             // get TraitKey array index
             var arrIndex;
@@ -214,6 +223,14 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     }
 }
 
+//Show table and Print function
+function addTable(){
+	$('#femalesliders','#malesliders','#femalesliders').fadeOut(300).hide();
+	$('.slider').fadeOut(300).addClass('hide');
+	$('#tables').fadeOut(300).show();
+	window.print();
+
+}
 
 // TODO: what is this doing here?
 //$('#closewelcome').tooltip();
