@@ -198,8 +198,11 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                 // get our trait from the slider
                 if (!v.match(/(slider|widget|corner)/)){
                     traitKey = v;
-					
+					var Traits = traitKey;
+					//grabs the phenotype
+					$('#eyeS').html('<b>'+Traits+'</b>');
                 }
+				
             });
 			
 			console.log(traitKey);
