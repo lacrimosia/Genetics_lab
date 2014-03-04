@@ -23,8 +23,9 @@
      <!--end header-->
      
        <!--print page-->
-     <div id="print">
-     <input type="button" id="print" value="Print" class="hide" onClick="window.print()">
+     <div id="print" class="hide">
+     <input type="button" id="prints" value="Print" onClick="window.print()">
+     <input type="button" onClick="hiding()" id="hideT" value="Hide/Show">
      </div>
      <!--end print-->
 
@@ -270,13 +271,13 @@
 <!--END TABLES-->
      	 <!--div one--><!-- This is the female sliders-->
          <div id="femalesliders" class="">
-           <span class="titles hide">Female</span>
+           <strong><span class="titles">Female</span></strong>
            <div class='slidercontainer'></div>
          </div>
          
          	
          <div id="malesliders" class="">
-         <span class="titles hide">Male</span>
+         <strong><span class="titles">Male</span></strong>
            <div class='slidercontainer'></div>
          </div>
          <!-- end one--> 
@@ -291,7 +292,7 @@
      <!--footer container with buttons-->
      <div id="bottom_footer">
      <input type="button" value="Reset" id="reset" onClick="window.location.reload()">
-     <input type="button" value="Print Results" onClick="addTable()" id="create">
+     <input type="button" value="Show Results" onClick="addTable()" id="create">
      </div><!--end footer container-->
      
       <!--help menu-->

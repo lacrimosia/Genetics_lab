@@ -52,7 +52,7 @@ $(document).ready(function() {
 	location.reload();
 	return false;
     });
-
+	
     // open instructional dialog on documentready
     //openHelpDialog();
     
@@ -225,15 +225,23 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
 
 //Show table and Print function
 function addTable(){
-	$('#femalesliders','#malesliders','#femalesliders').fadeOut(300).hide();
-	$('.slider').fadeOut(300).addClass('hide');
-	$('#tables').fadeOut(300).show();
-	window.print();
+	$('#femalesliders','#malesliders').fadeOut(500).hide();
+	$('.slider').fadeOut(500).addClass('hide');
+	$('#tables').fadeOut(500).show();
+	$('#print').fadeOut(500).removeClass('hide');
+	$('span.titles').addClass('hide');
 
 }
 
-// TODO: what is this doing here?
-//$('#closewelcome').tooltip();
+//hide show table
+function hiding(){
+	$('#hideT').show();
+	$('input#print').show();
+	$('#femalesliders','#malesliders').toggle();
+	$('.slider').fadeOut(300).toggle();
+	$('#tables').fadeOut(300).toggle();
+	$('span.titles').toggle();	
+}
 
 //image name generator
 function getImageName(monsterdiv, bodypart, bodyTraits, item) {

@@ -18,6 +18,19 @@ body {
         display: none;
 }
 
+span{
+	font-family: verdana;
+}
+
+img{
+	color: transparent;
+}
+
+#hideT{
+	float: right;
+	margin-right: 30px;
+}
+
 .hide{
 	display: none;
 }
@@ -119,7 +132,8 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 #right{
 	width: 450px;
 	height: 515px;
-	background-color: #fff;
+	/*background-color: #fff;*/
+	background-color: #ffffff;
 	border: 1px solid #141B56;
 	position: absolute;
 	top: 25px;
@@ -367,7 +381,18 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #14
     border: none;
 }
 
-input#print{
+#print{
+	position: absolute;
+	top: 0px;
+	left: 717px;
+	width: 235px;
+	height: 24px;
+/*	border: thin solid #0CC;*/
+	z-index: 2;
+	float: right;
+}
+
+input#prints,#hideT{
 	-moz-box-shadow:inset 0px -3px 0px -6px #ff6600;
 	-webkit-box-shadow:inset 0px -3px 0px -6px #ff6600;
 	box-shadow:inset 0px -3px 0px -6px #ff6600;
@@ -397,40 +422,90 @@ input#print{
 	font-style:normal;
 	height:20px;
 	line-height:20px;
-	width:75px;
-	height: 20px;
+	width:100px;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #000000;
 	border: 1px solid #141B56;
 	font-size: 14px;
-	z-index: 2;
-	position: absolute;
-	top: 0px;
-	left: 847px;
+	z-index: 5;
 	margin-top:3px;
+	padding-right: 3px;
 
 }
 
-input#print:hover{
+input#prints:hover,#hideT:hover{
 		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f26a0f), color-stop(1, #fa9450) );
 	background:-moz-linear-gradient( center top, #f26a0f 5%, #fa9450 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f26a0f', endColorstr='#fa9450');
 	background-color:#f26a0f;
-	width:75px;
+	width:100px;
 	height: 20px;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #000000;
 	border: 1px solid #141B56;
 	font-size: 14px;
-	z-index: 2;
-	position: absolute;
-	top: 0px;
-	left: 847px;
+	z-index: 5;
 	margin-top: 3px;
+	padding-right: 3px;
 
 }
+
+input#prints{
+	/*background-color: #141B56;*/
+	-moz-box-shadow:inset 0px -3px 0px -6px #2b2b2b;
+	-webkit-box-shadow:inset 0px -3px 0px -6px #2b2b2b;
+	box-shadow:inset 0px -3px 0px -6px #2b2b2b;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4d59ba), color-stop(1, #141b56) );
+	background:-moz-linear-gradient( center top, #4d59ba 5%, #141b56 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d59ba', endColorstr='#141b56');
+	background-color:#4d59ba;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #696969;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width: 100px;
+	height: 20px;
+	border: thin solid #141B56;
+	font-size: 14px;
+	z-index: 5;
+	margin-top: 3px;
+	padding-right: 3px;
+}
+
+input#prints:hover{
+	/*background-color: #141B56;*/
+background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #141b56), color-stop(1, #4d59ba) );
+	background:-moz-linear-gradient( center top, #141b56 5%, #4d59ba 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#141b56', endColorstr='#4d59ba');
+	background-color:#141b56;
+
+	/*background-color: #141B56;*/
+	width: 100px;
+	height: 20px;
+	border: thin solid #141B56;
+	font-size: 14px;
+}
+
 
 
 /* ~~ miscellaneous float/clear classes ~~ */
