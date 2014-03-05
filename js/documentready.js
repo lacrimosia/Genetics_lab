@@ -130,6 +130,34 @@ function createMonster(monsterdiv, traitObject) {
     addMonsterImage(monsterdiv, 'eyelid', eyelid);
 }
 
+function addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, genotype, sliderIndex){
+    var rowtemplate = $('#row-template').html();
+
+    var arrIndex = 0;
+    if (sliderIndex == 0){
+        arrIndex = 0;
+    }else if(sliderIndex == 10){
+        arrIndex = 1;
+    }else if(sliderIndex == 20){
+        arrIndex = 2;
+    }
+    var allele1, allele2 = '';
+    $.each(data.traits, function(i,v){
+        if (v.name == traitKey) {
+            allele1 = v.allele1;
+            allele2 = v.allele2;
+        }
+    });
+    
+    rowtemplate = rowtemplate.replace(/TRAIT/g,traitKey);
+    rowtemplate = rowtemplate.replace(/ALLELE1/g,allele1);
+    rowtemplate = rowtemplate.replace(/ALLELE2/g,allele2);
+    rowtemplate = rowtemplate.replace(/GENOTYPE/g,genotype);
+    rowtemplate = rowtemplate.replace(/PHENOTYPE/g,bodyTraits[traitKey][0][Object.keys(bodyTraits[traitKey][0])].phenotype);
+
+    $('#'+monsterdiv+'reference').find('tbody').append(rowtemplate);
+}
+
 function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     // get template divs
 
@@ -137,10 +165,9 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     // get our default value
     var defaultSelection = getKeyName(bodyTraits,traitKey);
     var defaultValue = 0;
-
     // now we generate the slider
     // 
-    newdiv = newdiv.replace(/TRAIT/g, trait);
+    newdiv = newdiv.replace(/TRAIT/, trait);
 
     var label = '';
     $.each(defaultTraitObject[traitKey], function(i, v){
@@ -156,7 +183,6 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                 }
             }
             if (i == 0){
-				console.log(key);
                 label = ' '+key+' ';
             } else {
                 label = label+'| '+key+' ';
@@ -164,6 +190,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
         }
     });
     newdiv = newdiv.replace(/LABELTEXT/,label);
+    newdiv = newdiv.replace(/TRAITKEY/,traitKey);
 
     // set our unique id
     var sliderIndex = $('#floating').find('.slider').length;
@@ -172,7 +199,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     // append the new slider
     $('#'+monsterdiv+'sliders').find('.slidercontainer').prepend(newdiv);
     //console.log($('#'+monsterdiv+'sliders').find('.slider:first-child').slider("option", "value", defaultValue));
-//    $( ".selector" ).slider( "value", 55 );
+    //    $( ".selector" ).slider( "value", 55 );
 
     // add slider functionality
     //console.log(defaultValue);
@@ -190,23 +217,23 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
 
             // I buried the trait in $(this).attr('class'), so we need to find it
             var c = $(this).attr('class').split(' ')
-			$('#eyeColor').html('<b>'+c+'</b>');
-			/*c selects the value of the slider*/
-			
-            var traitKey = '';
+	    //$('#eyeColor').html('<b>'+c+'</b>');
+	    /*c selects the value of the slider*/
+	    
+            var t = '';
             $.each(c, function(i, v){
                 // get our trait from the slider
                 if (!v.match(/(slider|widget|corner)/)){
-                    traitKey = v;
-					var Traits = traitKey;
-					//comment
-					//inserts the phenotype into table
-					$('#eyeColor,#eyeColorG').html('<b>'+eyeColor+'</b>');
+                    t = v;
+		    var Traits = t;
+		    //comment
+		    //inserts the phenotype into table
+		    //$('#eyeColor,#eyeColorG').html('<b>'+eyeColor+'</b>');
                 }
-				
+		
             });
-			
-            // get TraitKey array index
+	    
+            // get slider array index
             var arrIndex;
             if (ui.value == 0){
                 arrIndex = 0;
@@ -215,34 +242,55 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             }else if(ui.value == 20){
                 arrIndex = 2;
             }
-            var newImage = getImageName(gender, traitKey, defaultTraitObject, arrIndex);
-            replaceMonsterImage(gender, traitKey, newImage);
+            // update our image
+            var newImage = getImageName(gender, t, defaultTraitObject, arrIndex);
+            replaceMonsterImage(gender, t, newImage);
+
+
+            // update our result table
+            var sliderTraitKey = $(this).attr('oe-traitkey');
+            var genotype = Object.keys(defaultTraitObject[sliderTraitKey][arrIndex]);
+            var phenotype = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].phenotype;
+            
+            // always female
+            $.each($('#femalereference').find('.trait'), function(i,v){
+                if ($(v).text() == sliderTraitKey) {
+                    // change the genotype and phenotype
+                    $('#femalereference').find('tr').eq(i+1).find('.genotype').text(genotype);
+                    $('#femalereference').find('tr').eq(i+1).find('.phenotype').text(phenotype);
+                    return false;
+                }
+            });
+
         }
     });
-	//disable male sliders
+    //disable male sliders
     if (monsterdiv == 'male') {
         $('.slider'+sliderIndex).slider('disable');        
     }
+
+    // add a row to our result table
+    addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, defaultSelection, defaultValue);
 }
 
 //Show table and Print function
 function addTable(){
-	$('#femalesliders','#malesliders').fadeOut(500).hide();
-	$('.slider').fadeOut(500).addClass('hide');
-	$('#tables').fadeOut(500).show();
-	//$('#print').fadeOut(500).removeClass('hide');
-	$('span.titles').addClass('hide');
+    $('#femalesliders','#malesliders').fadeOut(500).hide();
+    $('.slider').fadeOut(500).addClass('hide');
+    $('#tables').fadeOut(500).show();
+    //$('#print').fadeOut(500).removeClass('hide');
+    $('span.titles').addClass('hide');
 
 }
 
 //hide show table
 function hiding(){
-	$('#hideT').show();
-	//$('input#print').show();
-	$('#femalesliders','#malesliders').toggle();
-	$('.slider').fadeOut(300).toggle();
-	$('#tables').fadeOut(300).toggle();
-	$('span.titles').toggle();	
+    $('#hideT').show();
+    //$('input#print').show();
+    $('#femalesliders','#malesliders').toggle();
+    $('.slider').fadeOut(300).toggle();
+    $('#tables').fadeOut(300).toggle();
+    $('span.titles').toggle();	
 }
 
 //image name generator
