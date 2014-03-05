@@ -23,7 +23,7 @@
      <!--end header-->
      
        <!--print page-->
-     <div id="print" class="hide">
+     <div id="print" class="">
      <input type="button" id="prints" value="Print" onClick="window.print()">
      <input type="button" onClick="hiding()" id="hideT" value="Hide/Show">
      </div>
@@ -76,10 +76,10 @@
 <!--Eye Color-->
 <tr>
 <td>Eye Color</td>
-<td>Red (E)</td>
+<td>Red (R)</td>
 <td>White (R')</td>
-<td><span class="eyeColor"></span></td>
-<td></td>
+<td><span id="eyeColorG"></span></td>
+<td><span id="eyeColor"></span></td>
 </tr>
 
 <!--Eye-->
@@ -88,7 +88,7 @@
 <td>Two Small Eyes (E)</td>
 <td>One Large Eye (e)</td>
 <td></td>
-<td id="eyeS"></td>
+<td><span id="eyeS"></span></td>
 </tr>
 
 <!--Teeth-->
@@ -166,8 +166,9 @@
 <!--end table-->
 
  <!--table to generate male -->
+ <div id="maleTable">
         <table class="reference2">
-        <strong>Male</strong>
+        <strong style="margin-bottom: 0px;">Male</strong>
 <tr>
 <th>Trait</th>
 <th>Allele 1</th>
@@ -266,6 +267,7 @@
 <td></td>
 </tr>
 </table>
+</div>
 </div>
 <!--end table--> 
 <!--END TABLES-->

@@ -142,7 +142,6 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     // 
     newdiv = newdiv.replace(/TRAIT/g, trait);
 
-    // generate our label
     var label = '';
     $.each(defaultTraitObject[traitKey], function(i, v){
         for(var key in v){
@@ -190,7 +189,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
 
             // I buried the trait in $(this).attr('class'), so we need to find it
             var c = $(this).attr('class').split(' ')
-			
+			$('#eyeColor').html('<b>'+c+'</b>');
 			/*c selects the value of the slider*/
 			
             var traitKey = '';
@@ -199,14 +198,15 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                 if (!v.match(/(slider|widget|corner)/)){
                     traitKey = v;
 					var Traits = traitKey;
-					//grabs the phenotype
-					$('#eyeS').html('<b>'+Traits+'</b>');
+					
+					//allele from jSON
+					var eyeColor = data.Traits[0];
+					//inserts the phenotype into table
+					$('#eyeColor,#eyeColorG').html('<b>'+eyeColor+'</b>');
                 }
 				
             });
 			
-			console.log(traitKey);
-
             // get TraitKey array index
             var arrIndex;
             if (ui.value == 0){
@@ -231,7 +231,7 @@ function addTable(){
 	$('#femalesliders','#malesliders').fadeOut(500).hide();
 	$('.slider').fadeOut(500).addClass('hide');
 	$('#tables').fadeOut(500).show();
-	$('#print').fadeOut(500).removeClass('hide');
+	//$('#print').fadeOut(500).removeClass('hide');
 	$('span.titles').addClass('hide');
 
 }
@@ -239,7 +239,7 @@ function addTable(){
 //hide show table
 function hiding(){
 	$('#hideT').show();
-	$('input#print').show();
+	//$('input#print').show();
 	$('#femalesliders','#malesliders').toggle();
 	$('.slider').fadeOut(300).toggle();
 	$('#tables').fadeOut(300).toggle();
