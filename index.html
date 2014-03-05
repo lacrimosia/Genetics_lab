@@ -23,9 +23,9 @@
      <!--end header-->
      
        <!--print page-->
-     <div id="print" class="">
+     <div id="print">
      <input type="button" id="prints" value="Print" onClick="window.print()">
-     <input type="button" onClick="hiding()" id="hideT" value="Hide/Show">
+    <!-- <input type="button" onClick="hiding()" id="hideT" value="Hide/Show">-->
      </div>
      <!--end print-->
 
@@ -123,14 +123,15 @@
      <!--footer container with buttons-->
      <div id="bottom_footer">
        <input type="button" value="Reset" id="reset" onClick="window.location.reload()">
-         <input type="button" value="Show Results" onClick="addTable()" id="create">
+         <input type="button" value="Show/Hide" onClick="hiding()" id="create">
+<!--                  <input type="button" value="Show Results" onClick="addTable()" id="create">-->
      </div><!--end footer container-->
      
      <!--help menu-->
      <div id="helpMessage" class="texts">
        <p style="text-align:center;"><b>Dr. Frankensteins Genetics Lab</b></p>
        <div style="overflow:auto; height:75px; width:auto; margin-bottom:15px;">
-         <p style="text-align:left;">In this exercise, you will create a Female monster for the male. </div>
+         <p style="text-align:left;">In this exercise, you will create a Female monster for the male. <p>More Instructions Go Here</p></div>
        <p style="text-align:center;"><a href="#" id="closewelcome" class="closing" title="Close Screen">CLICK HERE TO CLOSE</a></p>
      </div><!-- end help menu-->
      

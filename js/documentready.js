@@ -54,26 +54,26 @@ $(document).ready(function() {
     });
 	
     // open instructional dialog on documentready
-    //openHelpDialog();
+    openHelpDialog();
     
-    // click to open instructional dialog
-    // $('#help').click(function(){
-    //     openHelpDialog();
-    // });
+     //click to open instructional dialog
+     $('#help').click(function(){
+         openHelpDialog();
+     });
     
-    // $('#helpMessage').dialog('open').on('keydown', function(evt) {
-    //     if (evt.keyCode === $.ui.keyCode.ESCAPE) {
-    //         $('#helpMessage').dialog('close');
-    //         startQuiz(questionOrder);
-    //     }                
-    //     evt.stopPropagation();
-    // });
+     $('#helpMessage').dialog('open').on('keydown', function(evt) {
+         if (evt.keyCode === $.ui.keyCode.ESCAPE) {
+             $('#helpMessage').dialog('close');
+             startQuiz(questionOrder);
+         }                
+         evt.stopPropagation();
+     });
 	
-    //     //close dialog on click
-    // $('#closewelcome').click(function() {
-    //     $('#helpMessage').dialog('close');
-    //     $('#divBottom').removeClass('hide');
-    // });
+       //  close dialog on click
+     $('#closewelcome').click(function() {
+         $('#helpMessage').dialog('close');
+         $('#divBottom').removeClass('hide');
+     });
 
     // build malemonster 
     createMonster(malediv, maleTraitObject);
