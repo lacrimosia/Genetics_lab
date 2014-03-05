@@ -156,6 +156,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                 }
             }
             if (i == 0){
+				console.log(key);
                 label = ' '+key+' ';
             } else {
                 label = label+'| '+key+' ';
@@ -198,9 +199,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                 if (!v.match(/(slider|widget|corner)/)){
                     traitKey = v;
 					var Traits = traitKey;
-					
-					//allele from jSON
-					var eyeColor = data.Traits[0];
+					//comment
 					//inserts the phenotype into table
 					$('#eyeColor,#eyeColorG').html('<b>'+eyeColor+'</b>');
                 }
