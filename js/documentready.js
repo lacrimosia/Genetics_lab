@@ -251,7 +251,34 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             var sliderTraitKey = $(this).attr('oe-traitkey');
             var genotype = Object.keys(defaultTraitObject[sliderTraitKey][arrIndex]);
             var phenotype = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].phenotype;
+
+            // console.log(sliderTraitKey);
+            // console.log(genotype[0]);
+            // console.log(phenotype);
             
+            // we need to change the color of all body parts
+            // when we change the color of the body
+            if (sliderTraitKey == 'Skin Color') {
+                var bodyColor = '';
+                switch(genotype[0]) {
+                  case "GG":
+                    bodyColor = 'g';
+                    break;
+                  case "BB":
+                    bodyColor = 'b';
+                    break;
+                  case "GB":
+                    bodyColor = 'gb';
+                    break;
+                }
+                // swap our images
+                $.each($('#female').find('img'), function(iter,val){
+                    console.log(val); 
+                    var fname = $(val).attr('src');
+                    var newFname = fname.replace(/(images\/female\/.+)(_g_|_gb_|_b_)(.*)/, "$1_"+bodyColor+"_$3");
+                    $(val).attr('src', newFname);
+                });
+            }
             // always female
             $.each($('#femalereference').find('.trait'), function(i,v){
                 if ($(v).text() == sliderTraitKey) {
