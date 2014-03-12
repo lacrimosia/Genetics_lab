@@ -12,6 +12,16 @@ body {
 	text-align: center;
 }
 
+.titles{
+	font-family: inherit;
+	color: #141B56;
+}
+
+.normal{
+	font-family:inherit;
+	color: #141B56;
+}
+
 .ui-dialog .ui-dialog-titlebar {
 	padding: .4em 1em;
 	position: relative;
@@ -114,7 +124,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ this fixed width container surrounds all other elements ~~ */
 #container {
-	width: 933px;
+	width: 1050px;
 	background-color:#ffffff;
 	height: 605px; /* the auto value on the sides, coupled with the width, centers the layout */
 	border: 1px solid #141B56;
@@ -137,13 +147,13 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	border: 1px solid #141B56;
 	position: absolute;
 	top: 25px;
-	left: 460px;
+	left: 575px;
 	padding: 5px;
 	z-index: 0;
 }
 /*monster main div*/
 #monster{
-	width: 450px;
+	width: 560px;
 	height: 564px;
 	background-color: #fff;
 /*	border: thin solid #09F;*/
@@ -152,6 +162,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	left: 0px;
 	padding: 0px;
 	z-index: 0;
+	border: 1px solid #141B56;
 }
 #female {
     width: 100%;
@@ -160,11 +171,16 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	border: 1px solid #141B56;
 }
 #male {
-    width: 100%;
-    height: 50%;
+    width: 560px;
+	height: 564px;
     position:relative;
-	border: 1px solid #141B56;
+/*	border: 1px solid #141B56;*/
 }
+
+#male img{
+	margin-top: 40px;
+}
+
 
 .tail, .body, .horn, .toes, .claws, .ears, .teeth, .eye, .eyelid {
     position: absolute;
@@ -209,7 +225,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	position: absolute;
 	top: 557px;
 	background-color: #ffffff;
-	left: 459px;
+	left: 573px;
 	padding: 2px;
 	z-index: 0;
 }
@@ -333,13 +349,24 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #14
     clear: both;
     height: 50%;
     width: 100%;
+	position: absolute;
+	top: 270px;
+	left: 10px;
 }
 
 #floating {
-	width: 473px;
+	width: 450px;
 	height: 515px;
 	padding: 3px;
 	
+}
+
+#slider{
+	height: 256px;
+}
+
+#tablebox{
+	height: 256px;
 }
 .slider{
 	/*border: thin solid #06F;*/
@@ -384,7 +411,7 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #14
 #print{
 	position: absolute;
 	top: 0px;
-	left: 821px;
+	left: 936px;
 	width: 105px;
 	height: 24px;
 /*	border: thin solid #0CC;*/
@@ -508,7 +535,7 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #14
 
 #maleTable{
 	position: absolute;
-	top: 270px;
+	top: 0px;
 	left: 10px;
 }
 

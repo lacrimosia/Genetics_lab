@@ -20,7 +20,7 @@
   <!--added-->
     <div id="container">
     <!--header-->
-     <span>Dr. Frankensteins Genetics Lab</span>
+     <span class="titles">Dr. Frankensteins Genetics Lab</span>
      <!--end header-->
      
        <!--print page-->
@@ -32,8 +32,8 @@
 
      <!--start monster-->
      <div id="monster">
-       <div id="female">
-        <!--female body parts -->
+       <!--<div id="female">
+        <!--female body parts 
          <span class="tail"></span>
          <span class="body"></span>
          <span class="horn"></span>
@@ -43,7 +43,7 @@
          <span class="teeth"></span>
          <span class="eye"></span>
          <span class="eyelid"></span>
-       </div>
+       </div>-->
        <div id="male">
          <!--male body parts-->
          <span class="tail"></span>
@@ -62,9 +62,9 @@
      <div id="right">
        <div id="floating"> <!--floating div-->
          <!--table-->
-         <!--table to generate female and -->
+         <!--female table here -->
          <div id="tables" class="hide">
-           <strong>Female</strong>
+           <span class="normal">Female</span>
            <table id="femalereference" class="reference">
              <tr>
                <th>Trait</th>
@@ -75,10 +75,13 @@
              </tr>
 
            </table>
-           <!--table to generate male -->
+           </div>
+           <!-- end female table-->
+           
+           <!--male table -->
            <div id="maleTable">
              <table id="malereference" class="reference2">
-               <strong style="margin-bottom: 0px;">Male</strong>
+             <strong style="margin-bottom: 0px;">Male Traits</strong>
                <tr>
                  <th>Trait</th>
                  <th>Allele 1</th>
@@ -86,21 +89,21 @@
                  <th>Genotype</th>
                  <th>Phenotype</th>
                </tr>
-
              </table>
            </div>
+           <!--end male table-->
          </div>
          <!--end table--> 
          <!--END TABLES-->
      	 <!--div one--><!-- This is the female sliders-->
-         <div id="femalesliders" class="">
-           <strong><span class="titles">Female</span></strong>
+         <div id="femalesliders" class="hide">
+           <!--<strong>Female</strong>-->
            <div class='slidercontainer'></div>
          </div>
          
-         
+         <!--the male sliders-->
          <div id="malesliders" class="">
-           <strong><span class="titles">Male</span></strong>
+           <!--<strong>Male</strong>-->
            <div class='slidercontainer'></div>
          </div>
          <!-- end one--> 
@@ -124,7 +127,8 @@
      <!--footer container with buttons-->
      <div id="bottom_footer">
        <input type="button" value="Reset" id="reset" onClick="window.location.reload()">
-         <input type="button" value="Show/Hide" onClick="hiding()" id="create">
+         <input type="button" value="Next" onClick="hiding()" id="create">
+         <input type="button" value="Previous" onClick="previous()" id="previous" class="hide">
 <!--                  <input type="button" value="Show Results" onClick="addTable()" id="create">-->
      </div><!--end footer container-->
      

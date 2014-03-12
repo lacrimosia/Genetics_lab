@@ -302,23 +302,17 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
 
 //Show table and Print function
 function addTable(){
-    $('#femalesliders','#malesliders').fadeOut(500).hide();
-    $('.slider').fadeOut(500).addClass('hide');
-    $('#tables').fadeOut(500).show();
-    //$('#print').fadeOut(500).removeClass('hide');
-    $('span.titles').addClass('hide');
+ 
 
 }
 
 //hide show table
 function hiding(){
-    $('#hideT').show();
-    //$('input#print').show();
-    $('#femalesliders','#malesliders').toggle();
-    $('.slider').fadeOut(300).toggle();
-    $('#tables').fadeOut(300).toggle();
-    $('span.titles').toggle();	
+  	$('#male').fadeOut(300).toggle();
+	$('#maleTable').fadeOut(300).toggle();
+	$('#malesliders').fadeOut(300).toggle();
 }
+
 
 //image name generator
 function getImageName(monsterdiv, bodypart, bodyTraits, item) {
