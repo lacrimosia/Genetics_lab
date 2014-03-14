@@ -46,6 +46,7 @@ $('strong.titles').removeClass('hide');
 createTraitObject(maleTraits, maleTraitObject, 1);
 createTraitObject(initFemaleTraits, initFemaleTraitObject, 1);
 
+
 $(document).ready(function() {
     //reload page
     $('#Clear').click(function(){
@@ -80,6 +81,17 @@ $(document).ready(function() {
     // build femalemonster
     createMonster(femalediv, initFemaleTraitObject);
 
+    // reverse the table rows
+//    console.log($('#femalereference').append($('#femalereference tr:gt(1)').get().reverse()));
+    // var tbody = $('#malereference tbody tr');
+    // $.each(tbody, function(i, v){
+    //     console.log(v);
+    // });
+    // console.log(tbody);
+    // console.log($('#malereference tbody tr:last-child'));
+//console.log($('#malereference tbody tr:gt(1)').get().reverse());
+    //tbody.html($('#malereference tbody tr:gt(1)').get().reverse());
+
 });
 
 
@@ -93,42 +105,67 @@ function createMonster(monsterdiv, traitObject) {
     // tail
     var tail = getImageName(monsterdiv, 'tail', traitObject);
     addMonsterImage(monsterdiv, 'tail', tail);
-    addSlider(monsterdiv, 'tail', traitObject, 'Tail Color', 0);
-    addSlider(monsterdiv, 'tail', traitObject, 'Tail Shape', 1);
+    var defaultValueTailColor = addSlider(monsterdiv, 'tail', traitObject, 'Tail Color', 0);
+    var defaultValueTailShape = addSlider(monsterdiv, 'tail', traitObject, 'Tail Shape', 1);
     // body
     var body = getImageName(monsterdiv, 'body', traitObject);
     addMonsterImage(monsterdiv, 'body', body);
-    addSlider(monsterdiv, 'body', traitObject, 'Skin Color', 2);
+    var defaultValueSkinColor = addSlider(monsterdiv, 'body', traitObject, 'Skin Color', 2);
     // horn
     var horn = getImageName(monsterdiv, 'horn', traitObject);
     addMonsterImage(monsterdiv, 'horn', horn);
-    addSlider(monsterdiv, 'horn', traitObject, 'Horn Color', 3);
+    var defaultValueHornColor = addSlider(monsterdiv, 'horn', traitObject, 'Horn Color', 3);
     // toes
     var toes = getImageName(monsterdiv, 'toes', traitObject);
     addMonsterImage(monsterdiv, 'toes', toes);
-    addSlider(monsterdiv, 'toes', traitObject, 'Feet', 4);
+    var defaultValueFeet = addSlider(monsterdiv, 'toes', traitObject, 'Feet', 4);
     // claws
     var claws = getImageName(monsterdiv, 'claws', traitObject);
     addMonsterImage(monsterdiv, 'claws', claws);
-    addSlider(monsterdiv, 'claws', traitObject, 'Claws', 5);
+    var defaultValueClaws = addSlider(monsterdiv, 'claws', traitObject, 'Claws', 5);
     // ears
     var ears = getImageName(monsterdiv, 'ears', traitObject);
     addMonsterImage(monsterdiv, 'ears', ears);
-    addSlider(monsterdiv, 'ears', traitObject, 'Ear Shape', 6);
+    var defaultValueEarShape = addSlider(monsterdiv, 'ears', traitObject, 'Ear Shape', 6);
     // teeth
     var teeth = getImageName(monsterdiv, 'teeth', traitObject);
     addMonsterImage(monsterdiv, 'teeth', teeth);
-    addSlider(monsterdiv, 'teeth', traitObject, 'Teeth', 7);
+    var defaultValueTeeth = addSlider(monsterdiv, 'teeth', traitObject, 'Teeth', 7);
     // eye
     var eye = getImageName(monsterdiv, 'eye', traitObject);
     // eyes here, as it's the div name in the image container, (sorry!)
     addMonsterImage(monsterdiv, 'eye', eye);
-    addSlider(monsterdiv, 'eye', traitObject, 'Eye', 8);
-    addSlider(monsterdiv, 'eye', traitObject, 'Eye Color', 9);
+    var defaultValueEye = addSlider(monsterdiv, 'eye', traitObject, 'Eye', 8);
+    var defaultValueEyeColor = addSlider(monsterdiv, 'eye', traitObject, 'Eye Color', 9);
     //eyelid
     var eyelid = getImageName(monsterdiv, 'eyelid', traitObject);
     addMonsterImage(monsterdiv, 'eyelid', eyelid);
+
+    // we need to add table rows in reverse order... here
+    //eyelid: not needed, as there is no slider
+    //eye
+    console.log($('#'+monsterdiv));
+    addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye Color', defaultValueEyeColor, 9);
+    addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye', defaultValueEye, 8);
+    // teeth
+    addResultTableRow(monsterdiv, 'teeth', traitObject, 'Teeth', defaultValueTeeth, 7);
+    // ears
+    addResultTableRow(monsterdiv, 'ears', traitObject, 'Ear Shape', defaultValueEarShape, 6);
+    // claws
+    addResultTableRow(monsterdiv, 'claws', traitObject, 'Claws', defaultValueClaws, 5);
+    // toes
+    addResultTableRow(monsterdiv, 'toes', traitObject, 'Feet', defaultValueFeet, 4);
+    // horn
+    addResultTableRow(monsterdiv, 'horn', traitObject, 'Horn Color', defaultValueHornColor, 3);
+    // body
+    addResultTableRow(monsterdiv, 'body', traitObject, 'Skin Color', defaultValueSkinColor, 2);
+    // tail
+    addResultTableRow(monsterdiv, 'tail', traitObject, 'Tail Shape', defaultValueTailShape, 1);
+    addResultTableRow(monsterdiv, 'tail', traitObject, 'Tail Color', defaultValueTailColor, 0);
+
 }
+
+
 
 function addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, genotype, sliderIndex){
     var rowtemplate = $('#row-template').html();
@@ -193,14 +230,11 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     newdiv = newdiv.replace(/TRAITKEY/,traitKey);
 
     // set our unique id
-    var sliderIndex = $('#floating').find('.slider').length;
+    var sliderIndex = $('#slidercontainer').find('.slider').length;
     newdiv = newdiv.replace(/INDEX/g, sliderIndex);
 
     // append the new slider
     $('#'+monsterdiv+'sliders').find('.slidercontainer').prepend(newdiv);
-    //console.log($('#'+monsterdiv+'sliders').find('.slider:first-child').slider("option", "value", defaultValue));
-    //    $( ".selector" ).slider( "value", 55 );
-
     // add slider functionality
     //console.log(defaultValue);
     $('.slider'+sliderIndex).slider({
@@ -244,6 +278,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             }
             // update our image
             var newImage = getImageName(gender, t, defaultTraitObject, arrIndex);
+            console.log(newImage);
             replaceMonsterImage(gender, t, newImage);
 
 
@@ -251,23 +286,19 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             var sliderTraitKey = $(this).attr('oe-traitkey');
             var genotype = Object.keys(defaultTraitObject[sliderTraitKey][arrIndex]);
             var phenotype = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].phenotype;
-
-            // console.log(sliderTraitKey);
-            // console.log(genotype[0]);
-            // console.log(phenotype);
-            
-            // we need to change the color of all body parts
+            console.log($('#female').find('.tail').find('img').attr('src'))
+           // we need to change the color of all body parts
             // when we change the color of the body
             if (sliderTraitKey == 'Skin Color') {
                 var bodyColor = '';
                 switch(genotype[0]) {
-                  case "GG":
+                case "GG":
                     bodyColor = 'g';
                     break;
-                  case "BB":
+                case "BB":
                     bodyColor = 'b';
                     break;
-                  case "GB":
+                case "GB":
                     bodyColor = 'gb';
                     break;
                 }
@@ -276,9 +307,47 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                     console.log(val); 
                     var fname = $(val).attr('src');
                     var newFname = fname.replace(/(images\/female\/.+)(_g_|_gb_|_b_)(.*)/, "$1_"+bodyColor+"_$3");
+                    console.log(fname);
                     $(val).attr('src', newFname);
                 });
             }
+            // we need to change the number of eyelids
+            // when the number of eyes change
+            if (sliderTraitKey == 'Eye') {
+                var imgSrc = $('#female').find('.eye').find('img').attr('src');
+                var eyelidSrc = $('#female').find('.eyelid').find('img').attr('src');
+                // we match eyes_
+                if (imgSrc.indexOf('eyes') != -1) {
+                    // we have two eyes
+                    var newEyelid = eyelidSrc.replace(/(images\/female\/)(.+)/, "$1eyelids.png");
+                    $('#female').find('.eyelid').find('img').attr('src', newEyelid);
+                } else {
+                    // we have one eye
+                    var newEyelid = eyelidSrc.replace(/(images\/female\/)(.+)/, "$1eyelid.png");
+                    $('#female').find('.eyelid').find('img').attr('src', newEyelid);
+                }
+            }
+            // we need to change the tail shape
+            if (sliderTraitKey == 'Tail Shape') {
+                console.log(phenotype);
+                var imgSrc = $('#female').find('.tail').find('img').attr('src');
+                console.log(imgSrc);
+                // we match tail_
+                var newTailShape = imgSrc.replace(/(images\/female\/.+)(_curled|_straight)(.png)/, "$1_"+phenotype.toLowerCase()+"$3");
+                console.log(newTailShape);
+                $('#female').find('.tail').find('img').attr('src', newTailShape);
+            }
+
+            // we need to change the tail color
+            if (sliderTraitKey == 'Tail Color') {
+                console.log(phenotype);
+                var imgSrc = $('#female').find('.tail').find('img').attr('src');
+                console.log(imgSrc);
+                // we match tail_
+                var newTailColor = imgSrc.replace(/(images\/female\/.+)(_orange_|_purple_)(.*)/, "$1_"+phenotype.toLowerCase()+"_$3");
+                $('#female').find('.tail').find('img').attr('src', newTailColor);
+            }
+
             // always female
             $.each($('#femalereference').find('.trait'), function(i,v){
                 if ($(v).text() == sliderTraitKey) {
@@ -288,7 +357,6 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
                     return false;
                 }
             });
-
         }
     });
     //disable male sliders
@@ -296,8 +364,8 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
         $('.slider'+sliderIndex).slider('disable');        
     }
 
-    // add a row to our result table
-    addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, defaultSelection, defaultValue);
+    // return default value of slider, so we can build the table
+    return defaultValue;
 }
 
 //Show table and Print function
@@ -307,10 +375,20 @@ function addTable(){
 }
 
 //hide show table
-function hiding(){
-  	$('#male').fadeOut(300).toggle();
-	$('#maleTable').fadeOut(300).toggle();
-	$('#malesliders').fadeOut(300).toggle();
+function next(){
+    $('#male').fadeOut(300).toggle();
+    $('#maleTable').fadeOut(300).toggle();
+    $('#malesliders').fadeOut(300).toggle();
+    $('#female').fadeOut(300).toggle();
+    $('#femaleTable').fadeOut(300).toggle();
+    $('#femalesliders').fadeOut(300).toggle();
+
+    $('#previous').fadeOut(300).toggle();
+    $('#reset').fadeOut(300).toggle();
+
+    $('#next').fadeOut(300).toggle();
+    $('#printme').fadeOut(300).toggle();
+    
 }
 
 
@@ -344,6 +422,8 @@ function getImageName(monsterdiv, bodypart, bodyTraits, item) {
     switch(bodypart)
     {
     case "tail":
+        console.log(monsterdiv, bodypart, bodyTraits, item);
+        console.log(bodyTraits['Tail Shape'][i][Object.keys(bodyTraits['Tail Shape'][i])].image);
         // color
         filename = filename + bodyTraits['Tail Color'][i][Object.keys(bodyTraits['Tail Color'][i])].image + '_';
         // shape
@@ -420,6 +500,9 @@ function openHelpDialog() {
     $('#helpMessage').css("margin-left","0px");
 }
 
+function printMe() {
+    console.log('Im printing');
+}
 function replaceMonsterImage(mydiv, myclass, imageName){
     // console.log($('#'+mydiv).find('.body').find('img').attr('src').split('_')[1].split('.')[0]);
     // console.log(imageName);
@@ -449,6 +532,7 @@ function shuffle(o){ //v1.0
 };
 
 function createTraitObject(traits, object, doshuffle) {
+
     $.each(traits, function(i, v){
         if(parseInt(doshuffle) == 1) {
             shuffle(v.genotype);
@@ -471,5 +555,4 @@ function getKeyName(o,traitKey) {
     }
     return key;
 }
-
 

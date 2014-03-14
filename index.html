@@ -25,15 +25,15 @@
      
        <!--print page-->
      <div id="print">
-     <input type="button" id="prints" value="Print" onClick="window.print()">
+     <!-- <input type="button" id="prints" value="Print" onClick="window.print()"> -->
     <!-- <input type="button" onClick="hiding()" id="hideT" value="Hide/Show">-->
      </div>
      <!--end print-->
 
      <!--start monster-->
      <div id="monster">
-       <!--<div id="female">
-        <!--female body parts 
+       <div id="female" class="hide">
+        <!--female body parts -->
          <span class="tail"></span>
          <span class="body"></span>
          <span class="horn"></span>
@@ -43,7 +43,7 @@
          <span class="teeth"></span>
          <span class="eye"></span>
          <span class="eyelid"></span>
-       </div>-->
+       </div>
        <div id="male">
          <!--male body parts-->
          <span class="tail"></span>
@@ -63,60 +63,64 @@
        <div id="floating"> <!--floating div-->
          <!--table-->
          <!--female table here -->
-         <div id="tables" class="hide">
-           <span class="normal">Female</span>
-           <table id="femalereference" class="reference">
-             <tr>
-               <th>Trait</th>
-               <th>Allele 1</th>
-               <th>Allele 2</th>
-               <th>Genotype</th>
-               <th>Phenotype</th>
-             </tr>
-
-           </table>
-           </div>
-           <!-- end female table-->
-           
-           <!--male table -->
-           <div id="maleTable">
-             <table id="malereference" class="reference2">
-             <strong style="margin-bottom: 0px;">Male Traits</strong>
-               <tr>
+         <div id="tables">
+           <div id="femaleTable" style="display: none;">
+             <strong>Female Traits</strong>
+             <table id="femalereference" class="reference">
+               <tr class="rowheading">
                  <th>Trait</th>
                  <th>Allele 1</th>
                  <th>Allele 2</th>
                  <th>Genotype</th>
                  <th>Phenotype</th>
                </tr>
+               
              </table>
            </div>
-           <!--end male table-->
+         <!-- end female table-->
+         
+         <!--male table -->
+         <div id="maleTable">
+           <strong style="margin-bottom: 0px;">Male Traits</strong>
+           <table id="malereference" class="reference2">
+
+             <tr class="rowheading">
+               <th>Trait</th>
+               <th>Allele 1</th>
+               <th>Allele 2</th>
+               <th>Genotype</th>
+               <th>Phenotype</th>
+             </tr>
+           </table>
          </div>
-         <!--end table--> 
-         <!--END TABLES-->
-     	 <!--div one--><!-- This is the female sliders-->
+         <!--end male table-->
+       </div>
+       <!--end table--> 
+       <!--END TABLES-->
+       <!--div one--><!-- This is the female sliders-->
+       <div id="slidercontainer">
          <div id="femalesliders" class="hide">
            <!--<strong>Female</strong>-->
            <div class='slidercontainer'></div>
          </div>
-         
+       
          <!--the male sliders-->
          <div id="malesliders" class="">
            <!--<strong>Male</strong>-->
            <div class='slidercontainer'></div>
          </div>
-         <!-- end one--> 
-       </div><!--end floating div-->
-     </div><!--end sliders container-->
-     <div id="slider_template">
-       <div id="sliderINDEX" class="slider"><!--skin color-->
-     	 <div class="label">LABELTEXT</div>
+       </div>
+       <!-- end one--> 
+     </div><!--end floating div-->
+    </div><!--end sliders container-->
+    <div id="slider_template">
+      <div id="sliderINDEX" class="slider"><!--skin color-->
+     	<div class="label">LABELTEXT</div>
      	 <div class="slider_look slider_style sliderINDEX TRAIT" oe-traitkey="TRAITKEY"></div>
        </div>
      </div>
      <script id="row-template" type="x-template" class="hide">
-       <tr>
+       <tr >
          <td class="trait">TRAIT</td>
          <td class="allele1">ALLELE1</td>
          <td class="allele2">ALLELE2</td>
@@ -126,9 +130,11 @@
      </script>
      <!--footer container with buttons-->
      <div id="bottom_footer">
-       <input type="button" value="Reset" id="reset" onClick="window.location.reload()">
-         <input type="button" value="Next" onClick="hiding()" id="create">
-         <input type="button" value="Previous" onClick="previous()" id="previous" class="hide">
+       <input type="button" value="Previous" onClick="next()" id="previous" style="display: none;"/>
+       <input type="button" value="Reset" id="reset" onClick="window.location.reload()" />
+       <input type="button" value="Next" onClick="next()" id="next" />
+       <input type="button" value="Print" onClick="printMe()" id="printme" style="display: none;"/>
+       
 <!--                  <input type="button" value="Show Results" onClick="addTable()" id="create">-->
      </div><!--end footer container-->
      
