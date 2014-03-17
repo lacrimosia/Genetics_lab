@@ -4,7 +4,12 @@ var fadeOutTransitiontime = 2000;
 var numQuestions = data.questions.length;
 
 // pdf document var
-var pdfdoc = new jsPDF('landscape');
+var pdfdoc = new jsPDF('landscape', 'pt', 'letter');
+// print placement in the PDF
+var pdfx = 30;
+var pdfy = 30;
+var pdfw = 742;
+var pdfh = 550;
 
 var maxtries = 3;
 
@@ -423,25 +428,29 @@ function addTable(){
 //hide show table
 function next(){
     // add page 1 to our pdf
-    html2canvas(document.body, {
+    html2canvas($('#container'), {
         onrendered: function(canvas) {
             var source = canvas.toDataURL('image/jpeg');
-            pdfdoc.addImage(source, 'JPEG', 15, 40, 180, 180);
+            pdfdoc.addImage(source, 'JPEG', pdfx, pdfy, pdfw, pdfh);
+
+            // prepare next page
+            $('#male').fadeOut(300).toggle();
+            $('#maleTable').fadeOut(300).toggle();
+            $('#malesliders').fadeOut(300).toggle();
+            $('#female').fadeOut(300).toggle();
+            $('#femaleTable').fadeOut(300).toggle();
+            $('#femalesliders').fadeOut(300).toggle();
+
+            $('#previous').fadeOut(300).toggle();
+            $('#reset').fadeOut(300).toggle();
+
+            $('#next').fadeOut(300).toggle();
+            $('#printme').fadeOut(300).toggle();
+
+
         }
     });
-    console.log(doc);
-    $('#male').fadeOut(300).toggle();
-    $('#maleTable').fadeOut(300).toggle();
-    $('#malesliders').fadeOut(300).toggle();
-    $('#female').fadeOut(300).toggle();
-    $('#femaleTable').fadeOut(300).toggle();
-    $('#femalesliders').fadeOut(300).toggle();
-
-    $('#previous').fadeOut(300).toggle();
-    $('#reset').fadeOut(300).toggle();
-
-    $('#next').fadeOut(300).toggle();
-    $('#printme').fadeOut(300).toggle();
+    
 }
 
 
@@ -554,19 +563,18 @@ function openHelpDialog() {
 
 function printMe() {
     console.log('printing');
-    console.log(doc);
-    html2canvas(document.body, {
+    html2canvas($('#container'), {
         onrendered: function(canvas) {
             var source = canvas.toDataURL('image/jpeg');
             pdfdoc.addPage();
-            pdfdoc.addImage(source, 'JPEG', 15, 40, 180, 180);
+            pdfdoc.addImage(source, 'JPEG', pdfx, pdfy, pdfw, pdfh);
             var out = pdfdoc.output();
             var url = 'data:application/pdf;base64,' + $.base64.encode(out);
             document.location.href = url;
-            // window.open(
-            //     url,
-            //     '_blank'
-            // );
+            window.open(
+                 url,
+                 '_blank'
+            );
         }
     });
 
