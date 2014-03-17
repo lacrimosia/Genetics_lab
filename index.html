@@ -6,13 +6,11 @@
     <!--stylesheets-->
     <!-- <Link rel="stylesheet" href="./css/jquE090.css"> -->
 
-    <link rel="stylesheet" title="normal" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/smoothness.css">
     <link rel="stylesheet" href="./css/dialog.css">
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/table.css">
-    <link rel="stylesheet" type="text/css" title="print" href="css/print.css">
-
     
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -27,9 +25,8 @@
     <script type="text/javascript" src="js/jspdf/jspdf.plugin.addimage.js"></script>
 
     <script type="text/javascript" src="js/documentready.js"></script>
-    <script type="text/javascript" src="js/styleswitcher.js"></script>
   </head>
-  <body onload="set_style_from_cookie()">
+  <body>
   <!--added-->
     <div id="container">
     <!--header-->
@@ -58,22 +55,7 @@
          <span class="eye"></span>
          <span class="eyelid"></span>
        </div>
-       <!-- <div id="monster2" class="hide monster2"> -->
-       <!-- 	<div id="male"> -->
-       <!--   <\!--male body parts-\-> -->
-       <!--   <span class="tail"></span> -->
-       <!--   <span class="body"></span> -->
-       <!--   <span class="horn"></span> -->
-       <!--   <span class="toes"></span> -->
-       <!--   <span class="claws"></span> -->
-       <!--   <span class="ears"></span> -->
-       <!--   <span class="teeth"></span> -->
-       <!--   <span class="eye"></span> -->
-       <!--   <span class="eyelid"></span> -->
-       <!-- </div> -->
-       <!--      </div> -->
-       
-       <!-- </div> -->
+
        <div id="male">
          <!--male body parts-->
          <span class="tail"></span>
@@ -160,10 +142,10 @@
      </script>
      <!--footer container with buttons-->
      <div id="bottom_footer">
-       <input type="button" value="Previous" onClick="previous(); switch_style('normal');return false;" id="previous" style="display: none;"/>
+       <input type="button" value="Previous" onClick="previous();" id="previous" style="display: none;"/>
        <input type="button" value="Reset" id="reset" onClick="window.location.reload();" />
        <input type="button" value="Next" onClick="next()" id="next" />
-       <input type="submit" value="Print" onClick="printMe(); switch_style('print');return false;" id="printme" style="display: none;"/>
+       <input type="submit" value="Print" onClick="printMe();" id="printme" style="display: none;"/>
        
 <!--                  <input type="button" value="Show Results" onClick="addTable()" id="create">-->
      </div><!--end footer container-->
