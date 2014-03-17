@@ -48,6 +48,22 @@
          <span class="eye"></span>
          <span class="eyelid"></span>
        </div>
+       <div id="monster2" class="hide monster2">
+       	<div id="male">
+         <!--male body parts-->
+         <span class="tail"></span>
+         <span class="body"></span>
+         <span class="horn"></span>
+         <span class="toes"></span>
+         <span class="claws"></span>
+         <span class="ears"></span>
+         <span class="teeth"></span>
+         <span class="eye"></span>
+         <span class="eyelid"></span>
+       </div>
+            </div>
+       
+       </div>
        <div id="male">
          <!--male body parts-->
          <span class="tail"></span>
@@ -134,10 +150,10 @@
      </script>
      <!--footer container with buttons-->
      <div id="bottom_footer">
-       <input type="button" value="Previous" onClick="next(); switch_style('normal');return false;" id="previous" style="display: none;"/>
+       <input type="button" value="Previous" onClick="previous(); switch_style('normal');return false;" id="previous" style="display: none;"/>
        <input type="button" value="Reset" id="reset" onClick="window.location.reload();" />
        <input type="button" value="Next" onClick="next()" id="next" />
-       <input type="submit" value="Print" onClick="switch_style('print');return false;" id="printme" style="display: none;"/>
+       <input type="submit" value="Print" onClick="printMe(); switch_style('print');return false;" id="printme" style="display: none;"/>
        
 <!--                  <input type="button" value="Show Results" onClick="addTable()" id="create">-->
      </div><!--end footer container-->

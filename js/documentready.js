@@ -531,19 +531,27 @@ function openHelpDialog() {
     $('#helpMessage').css("margin-left","0px");
 }
 
-/*function printMe() {
-	$('#male').css({
-		'position': 'absolute',
-		'top': '0px',
-		'left': '500px'
-	});
-	
+function printMe() {
 	$('#male').show();
-	$('#container').css({
-		'height': '1400px'
-	});
+	$('#maleTable').show();
+	$('#malesliders').show();
+	$('#monster2').show();
 
-}*/
+
+	
+}
+
+function previous() {
+	$('#male').hide();
+	$('#maleTable').hide();
+	$('#malesliders').hide();
+	$('#monster2').show();
+	$('#previous').hide();
+	$('#reset').show();
+
+
+	
+}
 function replaceMonsterImage(mydiv, myclass, imageName){
     // console.log($('#'+mydiv).find('.body').find('img').attr('src').split('_')[1].split('.')[0]);
     // console.log(imageName);

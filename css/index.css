@@ -12,6 +12,10 @@ body {
 	text-align: center;
 }
 
+strong{
+	text-align: left !important;
+}
+
 .titles{
 	font-family: inherit;
 	color: #141B56;
@@ -494,7 +498,7 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #14
 #oe_logo{
     position:absolute;
     top: 617px;
-    left: 300px;
+    left: 360px;
     width: 275px;
     height: 52px;
     border: none;
