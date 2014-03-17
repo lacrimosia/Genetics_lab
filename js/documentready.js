@@ -145,29 +145,30 @@ function createMonster(monsterdiv, traitObject) {
     //eyelid: not needed, as there is no slider
     //eye
     console.log($('#'+monsterdiv));
-    addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye Color', defaultValueEyeColor, 9);
-    addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye', defaultValueEye, 8);
+    console.log(defaultValueEye);
+    addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye Color', defaultValueEyeColor);
+    addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye', defaultValueEye);
     // teeth
-    addResultTableRow(monsterdiv, 'teeth', traitObject, 'Teeth', defaultValueTeeth, 7);
+    addResultTableRow(monsterdiv, 'teeth', traitObject, 'Teeth', defaultValueTeeth);
     // ears
-    addResultTableRow(monsterdiv, 'ears', traitObject, 'Ear Shape', defaultValueEarShape, 6);
+    addResultTableRow(monsterdiv, 'ears', traitObject, 'Ear Shape', defaultValueEarShape);
     // claws
-    addResultTableRow(monsterdiv, 'claws', traitObject, 'Claws', defaultValueClaws, 5);
+    addResultTableRow(monsterdiv, 'claws', traitObject, 'Claws', defaultValueClaws);
     // toes
-    addResultTableRow(monsterdiv, 'toes', traitObject, 'Feet', defaultValueFeet, 4);
+    addResultTableRow(monsterdiv, 'toes', traitObject, 'Feet', defaultValueFeet);
     // horn
-    addResultTableRow(monsterdiv, 'horn', traitObject, 'Horn Color', defaultValueHornColor, 3);
+    addResultTableRow(monsterdiv, 'horn', traitObject, 'Horn Color', defaultValueHornColor);
     // body
-    addResultTableRow(monsterdiv, 'body', traitObject, 'Skin Color', defaultValueSkinColor, 2);
+    addResultTableRow(monsterdiv, 'body', traitObject, 'Skin Color', defaultValueSkinColor);
     // tail
-    addResultTableRow(monsterdiv, 'tail', traitObject, 'Tail Shape', defaultValueTailShape, 1);
-    addResultTableRow(monsterdiv, 'tail', traitObject, 'Tail Color', defaultValueTailColor, 0);
+    addResultTableRow(monsterdiv, 'tail', traitObject, 'Tail Shape', defaultValueTailShape);
+    addResultTableRow(monsterdiv, 'tail', traitObject, 'Tail Color', defaultValueTailColor);
 
 }
 
 
 
-function addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, genotype, sliderIndex){
+function addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     var rowtemplate = $('#row-template').html();
 
     var arrIndex = 0;
@@ -178,6 +179,8 @@ function addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, genotype, sl
     }else if(sliderIndex == 20){
         arrIndex = 2;
     }
+    var genotype = Object.keys(defaultTraitObject[traitKey][arrIndex]);
+
     var allele1, allele2 = '';
     $.each(data.traits, function(i,v){
         if (v.name == traitKey) {
@@ -186,6 +189,7 @@ function addResultTableRow(monsterdiv, trait, bodyTraits, traitKey, genotype, sl
         }
     });
     
+    rowtemplate = rowtemplate.replace(/TRAITKEY/,traitKey.replace(/ /, '_'));
     rowtemplate = rowtemplate.replace(/TRAIT/g,traitKey);
     rowtemplate = rowtemplate.replace(/ALLELE1/g,allele1);
     rowtemplate = rowtemplate.replace(/ALLELE2/g,allele2);
@@ -206,6 +210,7 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
     // 
     newdiv = newdiv.replace(/TRAIT/, trait);
 
+    // generate our label
     var label = '';
     $.each(defaultTraitObject[traitKey], function(i, v){
         for(var key in v){
@@ -235,8 +240,8 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
 
     // append the new slider
     $('#'+monsterdiv+'sliders').find('.slidercontainer').prepend(newdiv);
+
     // add slider functionality
-    //console.log(defaultValue);
     $('.slider'+sliderIndex).slider({
         value: defaultValue,   //starting point of slider
         min: 0,
@@ -288,107 +293,113 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             var genotype = Object.keys(defaultTraitObject[sliderTraitKey][arrIndex]);
             var phenotype = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].phenotype;
 
-    // put together our filename
-    switch(sliderTraitKey)
-    {
-    case "Tail Color":
-        var tailcolor = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+            console.log(genotype);
+            // put together our filename
+            switch(sliderTraitKey)
+            {
+            case "Tail Color":
+                var tailcolor = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.tail').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_orange|_purple)(.*)/, "$1_"+tailcolor+"$3");
-        $('#female').find('.tail').find('img').attr('src', newFname);
-        break;
-    case "Tail Shape":
-        var tailshape = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.tail').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_orange|_purple)(.*)/, "$1_"+tailcolor+"$3");
+                $('#female').find('.tail').find('img').attr('src', newFname);
+                break;
+            case "Tail Shape":
+                var tailshape = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.tail').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_curly|_straight)(.*)/, "$1_"+tailshape+"$3");
-        $('#female').find('.tail').find('img').attr('src', newFname);
-        break;
-    case "Skin Color":
-        // color
-        var bodyColor = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.tail').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_curly|_straight)(.*)/, "$1_"+tailshape+"$3");
+                $('#female').find('.tail').find('img').attr('src', newFname);
+                break;
+            case "Skin Color":
+                // color
+                var bodyColor = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        $.each($('#female').find('img'), function(iter,val){
-            var fname = $(val).attr('src');
-            var newFname = fname.replace(/(images\/female\/.+)(_gb|_g|_b)(_?.*)/, "$1_"+bodyColor+"$3");
-            $(val).attr('src', newFname);
-        });
-        break;
-    case "Horn Color":
-        var horn = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                $.each($('#female').find('img'), function(iter,val){
+                    var fname = $(val).attr('src');
+                    var newFname = fname.replace(/(images\/female\/.+)(_gb|_g|_b)(_?.*)/, "$1_"+bodyColor+"$3");
+                    $(val).attr('src', newFname);
+                });
+                break;
+            case "Horn Color":
+                var horn = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.horn').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_white|_purple)(.*)/, "$1_"+horn+"$3");
-        $('#female').find('.horn').find('img').attr('src', newFname);
-        break;
-    case "Feet":
-        var feet = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.horn').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_white|_purple)(.*)/, "$1_"+horn+"$3");
+                $('#female').find('.horn').find('img').attr('src', newFname);
+                break;
+            case "Feet":
+                var feet = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.toes').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_four|_two)(.*)/, "$1_"+feet+"$3");
-        $('#female').find('.toes').find('img').attr('src', newFname);      
-        break;
-    case "Claws":
-        var claws = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.toes').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_four|_two)(.*)/, "$1_"+feet+"$3");
+                $('#female').find('.toes').find('img').attr('src', newFname);      
+                break;
+            case "Claws":
+                var claws = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.claws').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_long|_medium|_short)(.*)/, "$1_"+claws+"$3");
-        $('#female').find('.claws').find('img').attr('src', newFname);
-        break;
-    case "Ear Shape":
-        var ears = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.claws').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_long|_medium|_short)(.*)/, "$1_"+claws+"$3");
+                $('#female').find('.claws').find('img').attr('src', newFname);
+                break;
+            case "Ear Shape":
+                var ears = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.ears').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_round|_sharp)(.*)/, "$1_"+ears+"$3");
-        $('#female').find('.ears').find('img').attr('src', newFname);
-        break;
-    case "Teeth":
-        var teeth = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.ears').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_round|_sharp)(.*)/, "$1_"+ears+"$3");
+                $('#female').find('.ears').find('img').attr('src', newFname);
+                break;
+            case "Teeth":
+                var teeth = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.teeth').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_round|_sharp)(.*)/, "$1_"+teeth+"$3");
-        $('#female').find('.teeth').find('img').attr('src', newFname);
-        break;
-    case "Eye":
-        var eyes = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // swap our images
+                var fname = $('#female').find('.teeth').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_round|_sharp)(.*)/, "$1_"+teeth+"$3");
+                $('#female').find('.teeth').find('img').attr('src', newFname);
+                break;
+            case "Eye":
+                var eyes = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.eye').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/)(eyes|eye)(.*)/, "$1"+eyes+"$3");
-        $('#female').find('.eye').find('img').attr('src', newFname);
+                // swap our images
+                var fname = $('#female').find('.eye').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/)(eyes|eye)(.*)/, "$1"+eyes+"$3");
+                $('#female').find('.eye').find('img').attr('src', newFname);
 
-        // eyelids
-        var imgSrc = $('#female').find('.eye').find('img').attr('src');
-        var eyelidSrc = $('#female').find('.eyelid').find('img').attr('src');
-        // we match eyes_
-        if (imgSrc.indexOf('eyes') != -1) {
-            // we have two eyes
-            var newEyelid = eyelidSrc.replace(/(images\/female\/)(.+)/, "$1eyelids.png");
-            $('#female').find('.eyelid').find('img').attr('src', newEyelid);
-        } else {
-            // we have one eye
-            var newEyelid = eyelidSrc.replace(/(images\/female\/)(.+)/, "$1eyelid.png");
-            $('#female').find('.eyelid').find('img').attr('src', newEyelid);
-        }
-        break;
-    case "Eye Color":
-        var eyecolor = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
+                // eyelids
+                var imgSrc = $('#female').find('.eye').find('img').attr('src');
+                var eyelidSrc = $('#female').find('.eyelid').find('img').attr('src');
+                // we match eyes_
+                if (imgSrc.indexOf('eyes') != -1) {
+                    // we have two eyes
+                    var newEyelid = eyelidSrc.replace(/(images\/female\/)(.+)/, "$1eyelids.png");
+                    $('#female').find('.eyelid').find('img').attr('src', newEyelid);
+                } else {
+                    // we have one eye
+                    var newEyelid = eyelidSrc.replace(/(images\/female\/)(.+)/, "$1eyelid.png");
+                    $('#female').find('.eyelid').find('img').attr('src', newEyelid);
+                }
+                break;
+            case "Eye Color":
+                var eyecolor = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].image;
 
-        // swap our images
-        var fname = $('#female').find('.eye').find('img').attr('src');
-        var newFname = fname.replace(/(images\/female\/.+)(_pink|_white|_red)(.*)/, "$1_"+eyecolor+"$3");
-        $('#female').find('.eye').find('img').attr('src', newFname);
+                // swap our images
+                var fname = $('#female').find('.eye').find('img').attr('src');
+                var newFname = fname.replace(/(images\/female\/.+)(_pink|_white|_red)(.*)/, "$1_"+eyecolor+"$3");
+                $('#female').find('.eye').find('img').attr('src', newFname);
 
-    }
+            }
+
+            // update our result table
+            console.log(sliderTraitKey);
+            $('#'+monsterdiv+'reference .'+sliderTraitKey.replace(/ /, '_')).find('.genotype').text(genotype);
+            $('#'+monsterdiv+'reference .'+sliderTraitKey.replace(/ /, '_')).find('.phenotype').text(phenotype);
         }
     });
     //disable male sliders
@@ -420,7 +431,6 @@ function next(){
 
     $('#next').fadeOut(300).toggle();
     $('#printme').fadeOut(300).toggle();
-    
 }
 
 
@@ -533,17 +543,9 @@ function openHelpDialog() {
 function printMe() {
     console.log('Im printing');
 }
-function replaceMonsterImage(mydiv, myclass, imageName){
-    // console.log($('#'+mydiv).find('.body').find('img').attr('src').split('_')[1].split('.')[0]);
-    // console.log(imageName);
-    // // get body color
-    // var bodyImg = $('#'+mydiv).find('.body').find('img').attr('src').split('_')[1].split('.')[0];
-    // switch(imageName) {
-    //     case "body"
-    // }
-    
-    $('#'+mydiv).find('.'+myclass).html('<img src="images/'+imageName+'" alt="Monster '+myclass+'" />');
-}
+// function replaceMonsterImage(mydiv, myclass, imageName){
+//     $('#'+mydiv).find('.'+myclass).html('<img src="images/'+imageName+'" alt="Monster '+myclass+'" />');
+// }
 
 // utility functions
 function getData(jsonfile){
