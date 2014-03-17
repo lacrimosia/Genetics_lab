@@ -3,6 +3,9 @@ var data = JSON.parse(getData(jsonfile));
 var fadeOutTransitiontime = 2000;
 var numQuestions = data.questions.length;
 
+// pdf document var
+var pdfdoc = new jsPDF('landscape');
+
 var maxtries = 3;
 
 var correctColor = '#0fc7a4';
@@ -419,6 +422,14 @@ function addTable(){
 
 //hide show table
 function next(){
+    // add page 1 to our pdf
+    html2canvas(document.body, {
+        onrendered: function(canvas) {
+            var source = canvas.toDataURL('image/jpeg');
+            pdfdoc.addImage(source, 'JPEG', 15, 40, 180, 180);
+        }
+    });
+    console.log(doc);
     $('#male').fadeOut(300).toggle();
     $('#maleTable').fadeOut(300).toggle();
     $('#malesliders').fadeOut(300).toggle();
@@ -542,10 +553,33 @@ function openHelpDialog() {
 }
 
 function printMe() {
-	$('#male').show();
-	$('#maleTable').show();
-	$('#malesliders').show();
-	$('#monster2').show();
+    console.log('printing');
+    console.log(doc);
+    html2canvas(document.body, {
+        onrendered: function(canvas) {
+            var source = canvas.toDataURL('image/jpeg');
+            pdfdoc.addPage();
+            pdfdoc.addImage(source, 'JPEG', 15, 40, 180, 180);
+            var out = pdfdoc.output();
+            var url = 'data:application/pdf;base64,' + $.base64.encode(out);
+            document.location.href = url;
+            // window.open(
+            //     url,
+            //     '_blank'
+            // );
+        }
+    });
+
+
+
+    // var out = doc.output();
+    // var url = 'data:application/pdf;base64,' + $.base64.encode(out);
+    //document.location.href = url;
+
+	// $('#male').show();
+	// $('#maleTable').show();
+	// $('#malesliders').show();
+	// $('#monster2').show();
 
 
 	
