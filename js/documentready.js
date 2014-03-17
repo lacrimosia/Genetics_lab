@@ -542,22 +542,17 @@ function openHelpDialog() {
 }
 
 function printMe() {
-	$('#male').show();
-	$('#maleTable').show();
-	$('#malesliders').show();
-	$('#monster2').show();
-
-
-	
 }
 
 function previous() {
-	$('#male').hide();
-	$('#maleTable').hide();
-	$('#malesliders').hide();
-	$('#monster2').show();
+	$('#male').show();
+	$('#maleTable').show();
+	$('#malesliders').show();
 	$('#previous').hide();
 	$('#reset').show();
+	$('#female').hide();
+	$('#femalesliders').hide();
+	$('#femaleTable').hide();
 
 
 	
