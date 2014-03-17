@@ -424,6 +424,7 @@ function next(){
 }
 
 
+
 //image name generator
 function getImageName(monsterdiv, bodypart, bodyTraits, item) {
     // returns the name of the image
@@ -530,9 +531,19 @@ function openHelpDialog() {
     $('#helpMessage').css("margin-left","0px");
 }
 
-function printMe() {
-    console.log('Im printing');
-}
+/*function printMe() {
+	$('#male').css({
+		'position': 'absolute',
+		'top': '0px',
+		'left': '500px'
+	});
+	
+	$('#male').show();
+	$('#container').css({
+		'height': '1400px'
+	});
+
+}*/
 function replaceMonsterImage(mydiv, myclass, imageName){
     // console.log($('#'+mydiv).find('.body').find('img').attr('src').split('_')[1].split('.')[0]);
     // console.log(imageName);

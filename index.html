@@ -5,18 +5,22 @@
     <title>Dr. Frankensteins's Genetics Lab</title>
     <!--stylesheets-->
     <link rel="stylesheet" href="./css/jquE090.css">
-    <link rel="stylesheet" href="./css/index.css">
+
+    <link rel="stylesheet" title="normal" href="./css/index.css">
     <link rel="stylesheet" href="./css/smoothness.css">
     <link rel="stylesheet" href="./css/dialog.css">
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" type="text/css" title="print" href="css/print.css">
+
     
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/documentready.js"></script>
+    <script type="text/javascript" src="js/styleswitcher.js"></script>
   </head>
-  <body>
+  <body onload="set_style_from_cookie()">
   <!--added-->
     <div id="container">
     <!--header-->
@@ -130,10 +134,10 @@
      </script>
      <!--footer container with buttons-->
      <div id="bottom_footer">
-       <input type="button" value="Previous" onClick="next()" id="previous" style="display: none;"/>
-       <input type="button" value="Reset" id="reset" onClick="window.location.reload()" />
+       <input type="button" value="Previous" onClick="next(); switch_style('normal');return false;" id="previous" style="display: none;"/>
+       <input type="button" value="Reset" id="reset" onClick="window.location.reload();" />
        <input type="button" value="Next" onClick="next()" id="next" />
-       <input type="button" value="Print" onClick="printMe()" id="printme" style="display: none;"/>
+       <input type="submit" value="Print" onClick="switch_style('print');return false;" id="printme" style="display: none;"/>
        
 <!--                  <input type="button" value="Show Results" onClick="addTable()" id="create">-->
      </div><!--end footer container-->
