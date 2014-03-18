@@ -571,10 +571,8 @@ function printMe() {
             var out = pdfdoc.output();
             var url = 'data:application/pdf;base64,' + $.base64.encode(out);
             window.location.href = url;
-            window.open(
-                 url,
-                 '_blank'
-            );
+            window.open(url,'_blank');
+			//link
         }
     });
 
@@ -601,6 +599,8 @@ function previous() {
 	$('#female').hide();
 	$('#femalesliders').hide();
 	$('#femaleTable').hide();
+	$('#next').show();
+	$('#printme').hide();
 
 
 	
