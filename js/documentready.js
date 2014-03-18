@@ -563,7 +563,7 @@ function printMe() {
             var source = canvas.toDataURL('image/jpeg');
             pdfdoc.addPage();
             pdfdoc.addImage(source, 'JPEG', pdfx, pdfy, pdfw, pdfh);
-            pdfdoc.save('test.pdf')
+            pdfdoc.save('biology_189_genetics_lab.pdf')
             // var out = pdfdoc.output();
             // var url = 'data:application/pdf;base64,' + $.base64.encode(out);
             // window.location.href = url;
