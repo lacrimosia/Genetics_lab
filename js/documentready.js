@@ -570,7 +570,7 @@ function printMe() {
             pdfdoc.addImage(source, 'JPEG', pdfx, pdfy, pdfw, pdfh);
             var out = pdfdoc.output();
             var url = 'data:application/pdf;base64,' + $.base64.encode(out);
-            document.location.href = url;
+            window.location.href = url;
             window.open(
                  url,
                  '_blank'
