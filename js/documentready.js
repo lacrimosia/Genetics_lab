@@ -152,8 +152,6 @@ function createMonster(monsterdiv, traitObject) {
     // we need to add table rows in reverse order... here
     //eyelid: not needed, as there is no slider
     //eye
-    console.log($('#'+monsterdiv));
-    console.log(defaultValueEye);
     addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye Color', defaultValueEyeColor);
     addResultTableRow(monsterdiv, 'eye', traitObject, 'Eye', defaultValueEye);
     // teeth
@@ -301,7 +299,6 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             var genotype = Object.keys(defaultTraitObject[sliderTraitKey][arrIndex]);
             var phenotype = defaultTraitObject[sliderTraitKey][arrIndex][Object.keys(defaultTraitObject[sliderTraitKey][arrIndex])].phenotype;
 
-            console.log(genotype);
             // put together our filename
             switch(sliderTraitKey)
             {
@@ -405,7 +402,6 @@ function addSlider(monsterdiv, trait, bodyTraits, traitKey, sliderIndex){
             }
 
             // update our result table
-            console.log(sliderTraitKey);
             $('#'+monsterdiv+'reference .'+sliderTraitKey.replace(/ /, '_')).find('.genotype').text(genotype);
             $('#'+monsterdiv+'reference .'+sliderTraitKey.replace(/ /, '_')).find('.phenotype').text(phenotype);
         }
@@ -562,17 +558,17 @@ function openHelpDialog() {
 }
 
 function printMe() {
-    console.log('printing');
     html2canvas($('#container'), {
         onrendered: function(canvas) {
             var source = canvas.toDataURL('image/jpeg');
             pdfdoc.addPage();
             pdfdoc.addImage(source, 'JPEG', pdfx, pdfy, pdfw, pdfh);
-            var out = pdfdoc.output();
-            var url = 'data:application/pdf;base64,' + $.base64.encode(out);
-            window.location.href = url;
-            window.open(url,'_blank');
-			//link
+            pdfdoc.save('test.pdf')
+            // var out = pdfdoc.output();
+            // var url = 'data:application/pdf;base64,' + $.base64.encode(out);
+            // window.location.href = url;
+            // window.open(url,'_blank');
+	    //     	//link
         }
     });
 
